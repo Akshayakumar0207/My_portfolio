@@ -2,6 +2,7 @@ import { ArrowDown, Download, ExternalLink, Github, Linkedin, Mail } from "lucid
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hero-bg.jpg";
+import formalPortrait from "@/assets/akshaya-formal.jpg";
 
 const Hero = () => {
   const skills = [
@@ -32,60 +33,112 @@ const Hero = () => {
       <div className="absolute top-1/2 left-20 w-12 h-12 rounded-full bg-project-accent/20 animate-float" style={{ animationDelay: '4s' }}></div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Content */}
-          <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="gradient-hero bg-clip-text text-transparent animate-gradient">
-                Akshaya Kumar
-              </span>
-            </h1>
-            
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-muted-foreground">
-              Computer Science Engineer & Full Stack Developer
-            </h2>
-            
-            <p className="text-lg md:text-xl mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Passionate about creating innovative solutions through code. Currently pursuing B.E. in CSE 
-              with expertise in full-stack development, mobile apps, and machine learning.
-            </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="order-2 lg:order-1">
+              {/* Main Content */}
+              <div className="animate-fade-in-up">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                  <span className="gradient-hero bg-clip-text text-transparent animate-gradient">
+                    Akshaya Kumar
+                  </span>
+                </h1>
+                
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 text-muted-foreground">
+                  Computer Science Engineer & Full Stack Developer
+                </h2>
+                
+                <p className="text-base md:text-lg lg:text-xl mb-8 text-muted-foreground leading-relaxed">
+                  Passionate about creating innovative solutions through code. Currently pursuing B.E. in CSE 
+                  with expertise in full-stack development, mobile apps, and machine learning.
+                </p>
+              </div>
+
+              {/* Skills Badges */}
+              <div className="flex flex-wrap gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                {skills.map((skill, index) => (
+                  <Badge 
+                    key={skill} 
+                    variant="secondary" 
+                    className="px-4 py-2 text-sm font-medium bg-skill-bg/50 backdrop-blur border-glass-border hover:bg-skill-bg/70 transition-all duration-300"
+                    style={{ animationDelay: `${0.1 * index}s` }}
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <Button 
+                  size="lg" 
+                  onClick={scrollToProjects}
+                  className="gradient-hero hover:opacity-90 text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
+                >
+                  View Projects
+                  <ExternalLink className="ml-2" size={20} />
+                </Button>
+                
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  onClick={scrollToContact}
+                  className="border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
+                >
+                  Contact Me
+                  <Mail className="ml-2" size={20} />
+                </Button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
+                  <Github size={24} />
+                </Button>
+                <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
+                  <Linkedin size={24} />
+                </Button>
+                <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
+                  <Mail size={24} />
+                </Button>
+              </div>
+
+              {/* Current Focus */}
+              <div className="glass-effect rounded-2xl p-6 max-w-md animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+                <h3 className="font-semibold mb-2 text-primary">Currently Working On</h3>
+                <p className="text-sm text-muted-foreground">
+                  Advanced Machine Learning projects and Full Stack Development with modern frameworks
+                </p>
+              </div>
+            </div>
+
+            {/* Right Content - Portrait */}
+            <div className="order-1 lg:order-2 flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="relative">
+                {/* Portrait Container with Glass Effect */}
+                <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full glass-effect p-4 transform hover:scale-105 transition-all duration-500">
+                  <div className="w-full h-full rounded-full overflow-hidden relative">
+                    <img
+                      src={formalPortrait}
+                      alt="Akshaya Kumar - Professional Portrait"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
+                  </div>
+                </div>
+                
+                {/* Floating Elements around Portrait */}
+                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full gradient-hero animate-float opacity-80"></div>
+                <div className="absolute -bottom-6 -left-6 w-8 h-8 rounded-full bg-project-accent animate-float opacity-60" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-1/2 -left-8 w-6 h-6 rounded-full bg-skill-bg animate-float opacity-40" style={{ animationDelay: '4s' }}></div>
+              </div>
+            </div>
           </div>
 
-          {/* Skills Badges */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            {skills.map((skill, index) => (
-              <Badge 
-                key={skill} 
-                variant="secondary" 
-                className="px-4 py-2 text-sm font-medium bg-skill-bg/50 backdrop-blur border-glass-border hover:bg-skill-bg/70 transition-all duration-300"
-                style={{ animationDelay: `${0.1 * index}s` }}
-              >
-                {skill}
-              </Badge>
-            ))}
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <Button 
-              size="lg" 
-              onClick={scrollToProjects}
-              className="gradient-hero hover:opacity-90 text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
-            >
-              View Projects
-              <ExternalLink className="ml-2" size={20} />
-            </Button>
-            
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={scrollToContact}
-              className="border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Me
-              <Mail className="ml-2" size={20} />
-            </Button>
-            
+          {/* Download Resume - Centered below */}
+          <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '1s' }}>
             <Button 
               size="lg" 
               variant="outline" 
@@ -94,27 +147,6 @@ const Hero = () => {
               Download Resume
               <Download className="ml-2" size={20} />
             </Button>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
-              <Github size={24} />
-            </Button>
-            <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
-              <Linkedin size={24} />
-            </Button>
-            <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
-              <Mail size={24} />
-            </Button>
-          </div>
-
-          {/* Current Focus */}
-          <div className="glass-effect rounded-2xl p-6 max-w-md mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <h3 className="font-semibold mb-2 text-primary">Currently Working On</h3>
-            <p className="text-sm text-muted-foreground">
-              Advanced Machine Learning projects and Full Stack Development with modern frameworks
-            </p>
           </div>
 
           {/* Scroll Indicator */}

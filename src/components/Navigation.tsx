@@ -7,12 +7,13 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
-    { id: "home", label: "Home", icon: Home },
-    { id: "about", label: "About", icon: User },
-    { id: "projects", label: "Projects", icon: Code },
-    { id: "experience", label: "Experience", icon: Briefcase },
-    { id: "achievements", label: "Achievements", icon: Trophy },
-    { id: "contact", label: "Contact", icon: Mail },
+    { id: "home", label: "Home", icon: Home, path: "/" },
+    { id: "about", label: "About", icon: User, path: "/" },
+    { id: "projects", label: "Projects", icon: Code, path: "/" },
+    { id: "experience", label: "Experience", icon: Briefcase, path: "/" },
+    { id: "achievements", label: "Achievements", icon: Trophy, path: "/" },
+    { id: "contact", label: "Contact", icon: Mail, path: "/" },
+    { id: "tools", label: "Tools", icon: Menu, path: "/tools" },
   ];
 
   useEffect(() => {
@@ -33,8 +34,13 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+  const scrollToSection = (item: { id: string; path: string }) => {
+    if (item.path !== "/") {
+      window.location.href = item.path;
+      return;
+    }
+    
+    const element = document.getElementById(item.id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -56,7 +62,7 @@ const Navigation = () => {
                 key={item.id}
                 variant={activeSection === item.id ? "default" : "ghost"}
                 size="sm"
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => scrollToSection(item)}
                 className={`flex items-center space-x-2 transition-all duration-300 ${
                   activeSection === item.id 
                     ? "gradient-hero text-white" 
@@ -89,7 +95,7 @@ const Navigation = () => {
                   key={item.id}
                   variant={activeSection === item.id ? "default" : "ghost"}
                   size="sm"
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => scrollToSection(item)}
                   className={`flex items-center space-x-2 justify-start ${
                     activeSection === item.id 
                       ? "gradient-hero text-white" 

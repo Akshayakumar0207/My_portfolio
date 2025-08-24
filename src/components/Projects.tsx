@@ -4,6 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+// Import project images
+import blockchainImage from "@/assets/blockchain-voting.jpg";
+import eatifyImage from "@/assets/eatify-app.jpg";
+import busTrackingImage from "@/assets/bus-tracking.jpg";
+import trafficImage from "@/assets/traffic-management.jpg";
+import pastryImage from "@/assets/pastry-shop.jpg";
+import gameImage from "@/assets/plants-zombies.jpg";
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -17,6 +25,7 @@ const Projects = () => {
       tags: ["blockchain", "fullstack", "security"],
       category: "blockchain",
       date: "2024-03",
+      image: blockchainImage,
       github: "#",
       demo: "#",
       outcomes: "Successfully demonstrated 99.9% vote integrity with zero tampering incidents in testing"
@@ -30,6 +39,7 @@ const Projects = () => {
       tags: ["mobile", "flutter", "fullstack"],
       category: "mobile",
       date: "2024-01",
+      image: eatifyImage,
       github: "#",
       demo: "#",
       outcomes: "Designed for 10,000+ concurrent users with 3-second average order processing time"
@@ -43,6 +53,7 @@ const Projects = () => {
       tags: ["ml", "fullstack", "iot"],
       category: "ml",
       date: "2023-11",
+      image: busTrackingImage,
       github: "#",
       demo: "#",
       outcomes: "Achieved 95% ETA accuracy with 40% reduction in passenger wait times"
@@ -56,6 +67,7 @@ const Projects = () => {
       tags: ["ai", "iot", "fullstack"],
       category: "ai",
       date: "2023-09",
+      image: trafficImage,
       github: "#",
       demo: "#",
       outcomes: "Reduced traffic congestion by 35% in simulation testing environments"
@@ -69,6 +81,7 @@ const Projects = () => {
       tags: ["frontend", "fullstack", "ecommerce"],
       category: "web",
       date: "2023-07",
+      image: pastryImage,
       github: "#",
       demo: "#",
       outcomes: "Increased online orders by 150% for the local business within first month"
@@ -82,6 +95,7 @@ const Projects = () => {
       tags: ["game", "python"],
       category: "game",
       date: "2023-05",
+      image: gameImage,
       github: "#",
       demo: "#",
       outcomes: "Featured in college gaming showcase with 500+ downloads from peers"
@@ -155,9 +169,24 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.id} 
-                className="glass-effect border-0 hover:bg-card-hover transition-all duration-500 transform hover:scale-105 animate-fade-in-up"
+                className="glass-effect border-0 hover:bg-card-hover transition-all duration-500 transform hover:scale-105 animate-fade-in-up group"
                 style={{ animationDelay: `${0.1 * index}s` }}
               >
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute top-4 right-4">
+                    <Badge variant="secondary" className="bg-background/80 backdrop-blur text-xs">
+                      {formatDate(project.date)}
+                    </Badge>
+                  </div>
+                </div>
+
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-3">
                     <div className="w-12 h-12 rounded-xl gradient-hero flex items-center justify-center">
