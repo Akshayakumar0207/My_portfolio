@@ -13,7 +13,6 @@ const Navigation = () => {
     { id: "experience", label: "Experience", icon: Briefcase, path: "/" },
     { id: "achievements", label: "Achievements", icon: Trophy, path: "/" },
     { id: "contact", label: "Contact", icon: Mail, path: "/" },
-    { id: "tools", label: "Tools", icon: Menu, path: "/tools" },
   ];
 
   useEffect(() => {

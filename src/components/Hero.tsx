@@ -5,9 +5,6 @@ import heroImage from "@/assets/hero-bg.jpg";
 import formalPortrait from "@/assets/akshaya-formal.jpg";
 
 const Hero = () => {
-  const skills = [
-    "React", "Flutter", "Java", "Python", "JavaScript", "UI/UX", "MongoDB", "Firebase"
-  ];
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -55,19 +52,6 @@ const Hero = () => {
                 </p>
               </div>
 
-              {/* Skills Badges */}
-              <div className="flex flex-wrap gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                {skills.map((skill, index) => (
-                  <Badge 
-                    key={skill} 
-                    variant="secondary" 
-                    className="px-4 py-2 text-sm font-medium bg-skill-bg/50 backdrop-blur border-glass-border hover:bg-skill-bg/70 transition-all duration-300"
-                    style={{ animationDelay: `${0.1 * index}s` }}
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -108,7 +92,7 @@ const Hero = () => {
               <div className="glass-effect rounded-2xl p-6 max-w-md animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                 <h3 className="font-semibold mb-2 text-primary">Currently Working On</h3>
                 <p className="text-sm text-muted-foreground">
-                  Advanced Machine Learning projects and Full Stack Development with modern frameworks
+                  Working on final year project "Campus Bus Tracking System"
                 </p>
               </div>
             </div>
@@ -139,14 +123,20 @@ const Hero = () => {
 
           {/* Download Resume - Centered below */}
           <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-muted-foreground text-muted-foreground hover:bg-muted hover:text-foreground font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
-            >
-              Download Resume
-              <Download className="ml-2" size={20} />
-            </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-muted-foreground text-muted-foreground hover:bg-muted hover:text-foreground font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/resume.pdf';
+                  link.download = 'Akshaya_Kumar_Resume.pdf';
+                  link.click();
+                }}
+              >
+                Download Resume
+                <Download className="ml-2" size={20} />
+              </Button>
           </div>
 
           {/* Scroll Indicator */}

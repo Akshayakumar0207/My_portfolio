@@ -244,7 +244,7 @@ const Contact = () => {
               <Card className="glass-effect border-0">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-primary">
-                    Get in Touch
+                    Contact Information
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">

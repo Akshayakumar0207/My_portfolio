@@ -35,28 +35,12 @@ const Achievements = () => {
       icon: Users
     },
     {
-      id: 3,
-      title: "Code Innovation Challenge Winner",
-      year: "2023",
-      note: "Won first place in college-level coding competition for developing an efficient algorithm for dynamic programming optimization.",
-      category: "Competition",
-      icon: Award
-    },
-    {
       id: 4,
       title: "Tech Symposium - Outstanding Contributor",
       year: "2023",
       note: "Recognized for exceptional contribution to the organizing committee and successful coordination of technical events.",
       category: "Leadership",
       icon: Users
-    },
-    {
-      id: 5,
-      title: "Open Source Contribution Recognition",
-      year: "2023",
-      note: "Acknowledged for consistent contributions to open-source projects, helping improve documentation and bug fixes for community tools.",
-      category: "Open Source",
-      icon: Award
     }
   ];
 
@@ -94,14 +78,16 @@ const Achievements = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">
               <span className="gradient-hero bg-clip-text text-transparent">
-                Research & Achievements
+                Akshaya Kumar
               </span>
             </h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              Research & Achievements
+            </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Academic contributions, competitive achievements, and recognition for 
-              technical excellence and innovation in computer science.
+              Academic contributions and recognitions that showcase dedication to learning and innovation.
             </p>
           </div>
 
@@ -238,10 +224,10 @@ const Achievements = () => {
                 </CardContent>
               </Card>
               
-              <Card className="glass-effect border-0 text-center">
+               <Card className="glass-effect border-0 text-center">
                 <CardContent className="p-6">
                   <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
-                    5+
+                    3+
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Awards & Recognition

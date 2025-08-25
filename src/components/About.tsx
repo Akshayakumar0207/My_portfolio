@@ -88,70 +88,50 @@ const About = () => {
             </Card>
           </div>
 
-          {/* Education Timeline */}
+          {/* Education Pipeline */}
           <div className="mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3 className="text-3xl font-bold mb-8 text-center">Education</h3>
-            <div className="space-y-6">
-              {education.map((edu, index) => (
-                <Card key={index} className={`glass-effect border-0 transition-all duration-300 hover:bg-card-hover ${edu.current ? 'ring-2 ring-primary' : ''}`}>
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                      <div className="flex-1">
-                        <h4 className="text-xl font-semibold mb-2 text-primary">
-                          {edu.degree}
-                        </h4>
-                        <p className="text-muted-foreground mb-2">{edu.institution}</p>
-                        <div className="flex items-center gap-4">
-                          <Badge variant="outline" className="flex items-center gap-2">
-                            <Calendar size={14} />
-                            {edu.period}
-                          </Badge>
-                          <Badge variant="secondary" className="bg-skill-bg/50">
-                            {edu.score}
-                          </Badge>
-                          {edu.current && (
-                            <Badge className="gradient-hero text-white">Current</Badge>
-                          )}
-                        </div>
-                      </div>
+            <h3 className="text-3xl font-bold mb-12 text-center">Education</h3>
+            <div className="relative">
+              {/* Pipeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary via-accent to-muted h-full rounded-full"></div>
+              
+              <div className="space-y-12">
+                {education.map((edu, index) => (
+                  <div key={index} className="relative flex items-center">
+                    {/* Pipeline Node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-background z-10 shadow-lg"></div>
+                    
+                    {/* Content Card */}
+                    <div className={`w-full ${index % 2 === 0 ? 'pr-1/2 mr-8' : 'pl-1/2 ml-8'}`}>
+                      <Card className={`glass-effect border-0 transition-all duration-300 hover:bg-card-hover transform hover:scale-105 ${edu.current ? 'ring-2 ring-primary' : ''}`}>
+                        <CardContent className="p-6">
+                          <div className="flex flex-col gap-3">
+                            <h4 className="text-lg font-semibold text-primary">
+                              {edu.degree}
+                            </h4>
+                            <p className="text-muted-foreground">{edu.institution}</p>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <Badge variant="outline" className="flex items-center gap-1">
+                                <Calendar size={12} />
+                                {edu.period}
+                              </Badge>
+                              <Badge variant="secondary" className="bg-skill-bg/50">
+                                {edu.score}
+                              </Badge>
+                              {edu.current && (
+                                <Badge className="gradient-hero text-white">Current</Badge>
+                              )}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Skills Grid */}
-          <div className="mb-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <h3 className="text-3xl font-bold mb-8 text-center">Technical Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.entries(skills).map(([category, skillList]) => (
-                <Card key={category} className="glass-effect border-0 hover:bg-card-hover transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-lg capitalize text-primary">
-                      {category === 'frontend' ? 'Frontend' : 
-                       category === 'backend' ? 'Backend' : 
-                       category === 'database' ? 'Database' : 
-                       category === 'tools' ? 'Tools' : 'Others'}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {skillList.map((skill) => (
-                        <Badge 
-                          key={skill} 
-                          variant="secondary" 
-                          className="bg-skill-bg/50 hover:bg-skill-bg/70 transition-colors"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
 
           {/* Certifications */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
