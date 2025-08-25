@@ -1,6 +1,11 @@
 import { GraduationCap, Award, MapPin, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import certIBM from "@/assets/cert-ibm.jpg";
+import certKaggle from "@/assets/cert-kaggle.jpg";
+import certNovitech from "@/assets/cert-novitech.jpg";
+import certLnT from "@/assets/cert-lnt.jpg";
+import certIIT from "@/assets/cert-iit.jpg";
 
 const About = () => {
   const education = [
@@ -28,11 +33,11 @@ const About = () => {
   ];
 
   const certifications = [
-    { title: "Data Structures & Algorithms", issuer: "IBM", year: "2024" },
-    { title: "Google Python Course", issuer: "Kaggle", year: "2024" },
-    { title: "Full Stack Development", issuer: "NoviTech R&D", year: "2023" },
-    { title: "Advanced Java Programming", issuer: "L&T EduTech", year: "2023" },
-    { title: "Machine Learning Fundamentals", issuer: "IIT Madras", year: "2023" }
+    { title: "Data Structures & Algorithms", issuer: "IBM", year: "2024", image: certIBM },
+    { title: "Google Python Course", issuer: "Kaggle", year: "2024", image: certKaggle },
+    { title: "Full Stack Development", issuer: "NoviTech R&D", year: "2023", image: certNovitech },
+    { title: "Advanced Java Programming", issuer: "L&T EduTech", year: "2023", image: certLnT },
+    { title: "Machine Learning Fundamentals", issuer: "IIT Madras", year: "2023", image: certIIT }
   ];
 
   const skills = {
@@ -140,10 +145,14 @@ const About = () => {
               {certifications.map((cert, index) => (
                 <Card key={index} className="glass-effect border-0 hover:bg-card-hover transition-all duration-300 transform hover:scale-105">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full gradient-hero flex items-center justify-center">
-                      <Award size={24} className="text-white" />
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                      <img 
+                        src={cert.image} 
+                        alt={`${cert.title} certification`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <h4 className="font-semibold mb-2 text-primary">{cert.title}</h4>
+                    <h4 className="font-semibold mb-2 text-foreground">{cert.title}</h4>
                     <p className="text-sm text-muted-foreground mb-2">{cert.issuer}</p>
                     <Badge variant="outline">{cert.year}</Badge>
                   </CardContent>

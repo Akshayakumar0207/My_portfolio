@@ -6,14 +6,6 @@ import formalPortrait from "@/assets/akshaya-formal.jpg";
 
 const Hero = () => {
 
-  const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
@@ -53,43 +45,36 @@ const Hero = () => {
               </div>
 
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                <Button 
-                  size="lg" 
-                  onClick={scrollToProjects}
-                  className="gradient-hero hover:opacity-90 text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
-                >
-                  View Projects
-                  <ExternalLink className="ml-2" size={20} />
-                </Button>
-                
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  onClick={scrollToContact}
-                  className="border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 transition-all duration-300 transform hover:scale-105"
-                >
-                  Contact Me
-                  <Mail className="ml-2" size={20} />
-                </Button>
-              </div>
-
               {/* Social Links */}
-              <div className="flex gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-                <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
+              <div className="flex gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <Button 
+                  variant="ghost" 
+                  size="lg" 
+                  className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"
+                  onClick={() => window.open('https://github.com/Akshayakumar0207', '_blank')}
+                >
                   <Github size={24} />
                 </Button>
-                <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
+                <Button 
+                  variant="ghost" 
+                  size="lg" 
+                  className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"
+                  onClick={() => window.open('https://www.linkedin.com/in/akshaya-kumar-74a439300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', '_blank')}
+                >
                   <Linkedin size={24} />
                 </Button>
-                <Button variant="ghost" size="lg" className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110">
+                <Button 
+                  variant="ghost" 
+                  size="lg" 
+                  className="rounded-full hover:bg-primary/20 transition-all duration-300 transform hover:scale-110"
+                  onClick={() => window.open('mailto:akshayakumarcse02@gmail.com', '_blank')}
+                >
                   <Mail size={24} />
                 </Button>
               </div>
 
-              {/* Current Focus */}
-              <div className="glass-effect rounded-2xl p-6 max-w-md animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+              {/* Currently Working On */}
+              <div className="glass-effect rounded-2xl p-6 max-w-md animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                 <h3 className="font-semibold mb-2 text-primary">Currently Working On</h3>
                 <p className="text-sm text-muted-foreground">
                   Working on final year project "Campus Bus Tracking System"
