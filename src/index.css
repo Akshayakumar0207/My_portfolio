@@ -12,22 +12,22 @@
 
     --card: 240 10% 8%;
     --card-foreground: 0 0% 98%;
-    --card-hover: 285 85% 60%;
+    --card-hover: 220 10% 20%;
 
     --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 285 85% 60%;
-    --primary-hover: 285 85% 55%;
+    --primary-hover: 220 10% 40%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 270 60% 25%;
+    --secondary: 220 10% 40%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 10% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted-foreground: 0 0% 85%;
 
-    --accent: 285 85% 60%;
+    --accent: 220 10% 40%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 50%;
@@ -133,16 +133,32 @@
   
   /* Text visibility fixes */
   h1, h2, h3, h4, h5, h6, .heading-text {
-    color: hsl(var(--foreground)) !important;
+    color: white !important;
   }
   
   .text-white {
     color: white !important;
   }
   
+  .text-foreground {
+    color: white !important;
+  }
+  
+  .text-muted-foreground {
+    color: hsl(0 0% 85%) !important;
+  }
+  
   /* Hover effects */
+  .hover\:bg-primary\/20:hover {
+    background-color: hsl(220 10% 40% / 0.2) !important;
+  }
+  
   .hover\:text-white:hover {
     color: white !important;
+  }
+  
+  .hover\:bg-card-hover:hover {
+    background-color: hsl(220 10% 20%) !important;
   }
   
   .flip-card {
