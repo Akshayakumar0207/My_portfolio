@@ -54,10 +54,8 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-hero bg-clip-text text-transparent">
-                About Me
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              About Me
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A passionate Computer Science student with a strong foundation in full-stack development, 
@@ -95,7 +93,7 @@ const About = () => {
 
           {/* Education Pipeline */}
           <div className="mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3 className="text-3xl font-bold mb-12 text-center">Education</h3>
+            <h3 className="text-3xl font-bold mb-12 text-center text-white">Education</h3>
             <div className="relative">
               {/* Pipeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary via-accent to-muted h-full rounded-full"></div>
@@ -140,7 +138,7 @@ const About = () => {
 
           {/* Certifications */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <h3 className="text-3xl font-bold mb-8 text-center">Certifications</h3>
+            <h3 className="text-3xl font-bold mb-8 text-center text-white">Certifications</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
                 <Card key={index} className="glass-effect border-0 hover:bg-card-hover transition-all duration-300 transform hover:scale-105">

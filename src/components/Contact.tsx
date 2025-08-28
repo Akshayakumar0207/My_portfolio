@@ -130,10 +130,8 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-hero bg-clip-text text-transparent">
-                Let's Connect
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Let's Connect
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Have a project in mind, want to collaborate, or just want to say hello? 

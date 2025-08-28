@@ -78,12 +78,10 @@ const Achievements = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4">
-              <span className="gradient-hero bg-clip-text text-transparent">
-                Akshaya Kumar
-              </span>
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+              Akshaya Kumar
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Research & Achievements
             </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -93,7 +91,7 @@ const Achievements = () => {
 
           {/* Research Publications */}
           <div className="mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <h3 className="text-3xl font-bold mb-8 flex items-center gap-3 text-white">
               <FileText className="text-primary" size={32} />
               Research Publications
             </h3>
@@ -163,7 +161,7 @@ const Achievements = () => {
 
           {/* Achievements Grid */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <h3 className="text-3xl font-bold mb-8 flex items-center gap-3 text-white">
               <Trophy className="text-primary" size={32} />
               Awards & Recognition
             </h3>

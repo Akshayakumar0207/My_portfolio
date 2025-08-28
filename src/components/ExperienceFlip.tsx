@@ -1,4 +1,7 @@
-import React from "react";
+import sqlIcon from "@/assets/sql-icon.png";
+import uiuxIcon from "@/assets/uiux-icon.png";
+import genaiIcon from "@/assets/genai-icon.png";
+import promptIcon from "@/assets/prompt-icon.png";
 import { Briefcase, Calendar, MapPin, Award, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import FlipCard from "./FlipCard";
@@ -136,10 +139,8 @@ const ExperienceFlip = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-hero bg-clip-text text-transparent">
-                Experience & Learning Journey
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Experience & Learning Journey
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Click on any experience card to flip and see detailed responsibilities, achievements, and technologies used.
@@ -255,7 +256,7 @@ const ExperienceFlip = () => {
           {/* Technology Known Section */}
           <div className="mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-4">
+              <h3 className="text-3xl font-bold text-white mb-4">
                 Technology Known
               </h3>
               <p className="text-lg text-muted-foreground">
@@ -266,24 +267,30 @@ const ExperienceFlip = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {[
                 { name: "React", icon: "⚛️" },
-                { name: "Node.js", icon: "🟢" },
+                { name: "SQL", icon: sqlIcon },
                 { name: "Python", icon: "🐍" },
                 { name: "Java", icon: "☕" },
                 { name: "Flutter", icon: "📱" },
-                { name: "MongoDB", icon: "🍃" },
-                { name: "MySQL", icon: "🐬" },
+                { name: "UI/UX", icon: uiuxIcon },
                 { name: "Firebase", icon: "🔥" },
                 { name: "Git", icon: "📂" },
                 { name: "JavaScript", icon: "🟨" },
                 { name: "HTML/CSS", icon: "🎨" },
-                { name: "Machine Learning", icon: "🤖" }
+                { name: "Gen AI", icon: genaiIcon },
+                { name: "Prompt Engineering", icon: promptIcon }
               ].map((tech, index) => (
                 <div 
                   key={tech.name} 
                   className="glass-effect rounded-lg p-4 text-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-105"
                   style={{ animationDelay: `${0.1 * index}s` }}
                 >
-                  <div className="text-3xl mb-2">{tech.icon}</div>
+                  {typeof tech.icon === 'string' && tech.icon.includes('.png') ? (
+                    <div className="w-8 h-8 mx-auto mb-2">
+                      <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
+                    </div>
+                  ) : (
+                    <div className="text-3xl mb-2">{tech.icon}</div>
+                  )}
                   <p className="text-sm font-medium text-white">{tech.name}</p>
                 </div>
               ))}
