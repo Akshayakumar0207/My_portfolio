@@ -28,10 +28,8 @@ const Hero = () => {
             <div className="order-2 lg:order-1">
               {/* Main Content */}
               <div className="animate-fade-in-up">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                  <span className="gradient-hero bg-clip-text text-transparent animate-gradient">
-                    Akshaya Kumar
-                  </span>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+                  Akshaya Kumar
                 </h1>
                 
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 text-muted-foreground">

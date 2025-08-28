@@ -100,7 +100,7 @@ const Achievements = () => {
             
             <div className="space-y-6">
               {research.map((paper, index) => (
-                <Card key={paper.id} className="glass-effect border-0 hover:bg-card-hover transition-all duration-300">
+                <Card key={paper.id} className="glass-effect border-0 hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-102 animate-fade-in-up">
                   <CardHeader>
                     <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4">
                       <div className="flex-1">
@@ -172,14 +172,14 @@ const Achievements = () => {
               {achievements.map((achievement, index) => {
                 const IconComponent = achievement.icon;
                 return (
-                  <Card 
+                <Card 
                     key={achievement.id} 
-                    className="glass-effect border-0 hover:bg-card-hover transition-all duration-300 transform hover:scale-105"
+                    className="glass-effect border-0 hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105 animate-fade-in-up"
                     style={{ animationDelay: `${0.1 * index}s` }}
                   >
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl gradient-hero flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 rounded-xl bg-primary hover:bg-primary-hover flex items-center justify-center flex-shrink-0 transition-all duration-300">
                           <IconComponent size={24} className="text-white" />
                         </div>
                         
@@ -213,9 +213,9 @@ const Achievements = () => {
           {/* Achievement Stats */}
           <div className="mt-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <Card className="glass-effect border-0 text-center">
+               <Card className="glass-effect border-0 text-center hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105 animate-fade-in-up">
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
+                  <div className="text-3xl font-bold text-primary mb-2">
                     1
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -224,9 +224,9 @@ const Achievements = () => {
                 </CardContent>
               </Card>
               
-               <Card className="glass-effect border-0 text-center">
+               <Card className="glass-effect border-0 text-center hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
+                  <div className="text-3xl font-bold text-primary mb-2">
                     3+
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -235,9 +235,9 @@ const Achievements = () => {
                 </CardContent>
               </Card>
               
-              <Card className="glass-effect border-0 text-center">
+              <Card className="glass-effect border-0 text-center hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
+                  <div className="text-3xl font-bold text-primary mb-2">
                     3+
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -246,9 +246,9 @@ const Achievements = () => {
                 </CardContent>
               </Card>
               
-              <Card className="glass-effect border-0 text-center">
+              <Card className="glass-effect border-0 text-center hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <CardContent className="p-6">
-                  <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
+                  <div className="text-3xl font-bold text-primary mb-2">
                     10+
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -261,9 +261,9 @@ const Achievements = () => {
 
           {/* Call to Action */}
           <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <Card className="glass-effect border-0 max-w-2xl mx-auto">
+            <Card className="glass-effect border-0 max-w-2xl mx-auto hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 animate-fade-in-up">
               <CardContent className="p-8">
-                <h4 className="text-2xl font-bold mb-4 gradient-hero bg-clip-text text-transparent">
+                <h4 className="text-2xl font-bold mb-4 text-primary">
                   Interested in Collaboration?
                 </h4>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -272,7 +272,7 @@ const Achievements = () => {
                 </p>
                 <Button 
                   size="lg" 
-                  className="gradient-hero text-white hover:opacity-90 transition-all duration-300 transform hover:scale-105"
+                  className="bg-primary hover:bg-primary-hover text-white transition-all duration-300 transform hover:scale-105"
                   onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 >
                   Get In Touch
