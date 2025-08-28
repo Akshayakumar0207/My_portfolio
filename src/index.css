@@ -12,7 +12,7 @@
 
     --card: 240 10% 8%;
     --card-foreground: 0 0% 98%;
-    --card-hover: 240 15% 12%;
+    --card-hover: 285 85% 60%;
 
     --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
@@ -129,6 +129,20 @@
     background: rgba(240, 10%, 8%, 0.15);
     backdrop-filter: blur(20px);
     border: 1px solid hsl(var(--glass-border));
+  }
+  
+  /* Text visibility fixes */
+  h1, h2, h3, h4, h5, h6, .heading-text {
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .text-white {
+    color: white !important;
+  }
+  
+  /* Hover effects */
+  .hover\:text-white:hover {
+    color: white !important;
   }
   
   .flip-card {

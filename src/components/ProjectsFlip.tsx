@@ -8,7 +8,7 @@ import eatifyImage from "@/assets/eatify-app.jpg";
 import busTrackingImage from "@/assets/bus-tracking.jpg";
 import pastryShopImage from "@/assets/pastry-shop.jpg";
 import trafficManagement from "@/assets/traffic-management.jpg";
-import plantsZombies from "@/assets/plants-zombies.jpg";
+import ludoGame from "@/assets/ludo-game.jpg";
 
 const ProjectsFlip = () => {
   const projects = [
@@ -79,16 +79,16 @@ const ProjectsFlip = () => {
     },
     {
       id: 6,
-      title: "Plants vs Zombies Game",
-      summary: "Python-based tower defense game using Pygame",
-      image: plantsZombies,
-      details: "A recreation of the popular Plants vs Zombies game using Python and Pygame. Features multiple plant types, zombie varieties, level progression, and power-ups with engaging graphics and sound effects.",
-      tech: ["Python", "Pygame", "Game Development", "OOP", "Graphics"],
+      title: "Ludo Game with AI",
+      summary: "Python-based Ludo game with AI opponents and multiplayer support",
+      image: ludoGame,
+      details: "A digital recreation of the classic Ludo board game featuring AI opponents, multiplayer gameplay, and modern graphics. Includes intelligent AI players, game state management, and interactive UI with sound effects.",
+      tech: ["Python", "Pygame", "AI Algorithms", "Game Logic", "UI Design"],
       links: { github: "#", demo: "#" },
-      tags: ["Game", "Python"],
+      tags: ["Game", "AI"],
       startedAt: "2022-12",
       updatedAt: "2023-02",
-      keyAchievement: "1000+ downloads on GitHub"
+      keyAchievement: "AI opponents with 85% win rate"
     }
   ];
 

@@ -252,33 +252,41 @@ const ExperienceFlip = () => {
             ))}
           </div>
 
-          {/* Summary Stats */}
+          {/* Technology Known Section */}
           <div className="mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="glass-effect rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
-                  5+
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-4">
+                Technology Known
+              </h3>
+              <p className="text-lg text-muted-foreground">
+                Technologies and frameworks I work with
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {[
+                { name: "React", icon: "⚛️" },
+                { name: "Node.js", icon: "🟢" },
+                { name: "Python", icon: "🐍" },
+                { name: "Java", icon: "☕" },
+                { name: "Flutter", icon: "📱" },
+                { name: "MongoDB", icon: "🍃" },
+                { name: "MySQL", icon: "🐬" },
+                { name: "Firebase", icon: "🔥" },
+                { name: "Git", icon: "📂" },
+                { name: "JavaScript", icon: "🟨" },
+                { name: "HTML/CSS", icon: "🎨" },
+                { name: "Machine Learning", icon: "🤖" }
+              ].map((tech, index) => (
+                <div 
+                  key={tech.name} 
+                  className="glass-effect rounded-lg p-4 text-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-105"
+                  style={{ animationDelay: `${0.1 * index}s` }}
+                >
+                  <div className="text-3xl mb-2">{tech.icon}</div>
+                  <p className="text-sm font-medium text-white">{tech.name}</p>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  Professional Experiences
-                </p>
-              </div>
-              <div className="glass-effect rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
-                  15+
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Technologies Mastered
-                </p>
-              </div>
-              <div className="glass-effect rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
-                  10+
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Projects Delivered
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
