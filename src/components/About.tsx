@@ -7,6 +7,9 @@ import certNovitech from "@/assets/cert-novitech.jpg";
 import certLnT from "@/assets/cert-lnt.jpg";
 import certIIT from "@/assets/cert-iit.jpg";
 import certIBMUiUx from "@/assets/cert-ibm-uiux.jpg";
+import certInfosysDSA from "@/assets/cert-infosys-dsa.jpg";
+import certStackQueueJava from "@/assets/cert-stack-queue-java.jpg";
+import certNPTELJava from "@/assets/cert-nptel-java.jpg";
 
 const About = () => {
   const education = [
@@ -34,11 +37,11 @@ const About = () => {
   ];
 
   const certifications = [
-    { title: "Data Structures & Algorithms", issuer: "Infosys", year: "2024", image: certIBM },
+    { title: "Data Structures & Algorithms", issuer: "Infosys", year: "2024", image: certInfosysDSA },
     { title: "Google Python Course", issuer: "Kaggle", year: "2024", image: certKaggle },
     { title: "Full Stack Development", issuer: "NoviTech R&D", year: "2023", image: certNovitech },
-    { title: "Core Java", issuer: "Stack Queue Institution", year: "2023", image: certLnT },
-    { title: "Advanced Java Programming", issuer: "NPTEL", year: "2023", image: certIIT },
+    { title: "Core Java", issuer: "Stack Queue Institution", year: "2023", image: certStackQueueJava },
+    { title: "Advanced Java Programming", issuer: "NPTEL (IIT Madras)", year: "2023", image: certNPTELJava },
     { title: "UI/UX Designing", issuer: "IBM", year: "2024", image: certIBMUiUx }
   ];
 
