@@ -2,7 +2,7 @@ import { ArrowDown, Download, ExternalLink, Github, Linkedin, Mail } from "lucid
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hero-bg.jpg";
-import formalPortrait from "@/assets/akshaya-formal.jpg";
+const profileImage = "/lovable-uploads/750acb66-bcdf-4576-ae1b-1dd932fd95a9.png";
 
 const Hero = () => {
 
@@ -87,7 +87,7 @@ const Hero = () => {
                 <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full glass-effect p-4 transform hover:scale-105 transition-all duration-500">
                   <div className="w-full h-full rounded-full overflow-hidden relative">
                     <img
-                      src={formalPortrait}
+                      src={profileImage}
                       alt="Akshaya Kumar - Professional Portrait"
                       className="w-full h-full object-cover"
                     />
