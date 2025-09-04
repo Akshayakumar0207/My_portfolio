@@ -6,6 +6,7 @@ import certKaggle from "@/assets/cert-kaggle.jpg";
 import certNovitech from "@/assets/cert-novitech.jpg";
 import certLnT from "@/assets/cert-lnt.jpg";
 import certIIT from "@/assets/cert-iit.jpg";
+import certIBMUiUx from "@/assets/cert-ibm-uiux.jpg";
 
 const About = () => {
   const education = [
@@ -33,11 +34,12 @@ const About = () => {
   ];
 
   const certifications = [
-    { title: "Data Structures & Algorithms", issuer: "IBM", year: "2024", image: certIBM },
+    { title: "Data Structures & Algorithms", issuer: "Infosys", year: "2024", image: certIBM },
     { title: "Google Python Course", issuer: "Kaggle", year: "2024", image: certKaggle },
     { title: "Full Stack Development", issuer: "NoviTech R&D", year: "2023", image: certNovitech },
-    { title: "Advanced Java Programming", issuer: "L&T EduTech", year: "2023", image: certLnT },
-    { title: "Machine Learning Fundamentals", issuer: "IIT Madras", year: "2023", image: certIIT }
+    { title: "Core Java", issuer: "Stack Queue Institution", year: "2023", image: certLnT },
+    { title: "Advanced Java Programming", issuer: "NPTEL", year: "2023", image: certIIT },
+    { title: "UI/UX Designing", issuer: "IBM", year: "2024", image: certIBMUiUx }
   ];
 
   const skills = {
