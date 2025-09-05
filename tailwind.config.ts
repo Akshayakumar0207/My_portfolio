@@ -63,6 +63,9 @@ export default {
 				'glass-border': 'hsl(var(--glass-border))',
 				'skill-bg': 'hsl(var(--skill-bg))',
 				'project-accent': 'hsl(var(--project-accent))',
+				'certificate-accent': 'hsl(var(--certificate-accent))',
+				'intern-accent': 'hsl(var(--intern-accent))',
+				'tech-accent': 'hsl(var(--tech-accent))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

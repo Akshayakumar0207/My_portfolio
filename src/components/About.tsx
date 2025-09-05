@@ -146,9 +146,9 @@ const About = () => {
             <h3 className="text-3xl font-bold mb-8 text-center text-white">Certifications</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
-                <Card key={index} className="glass-effect border-0 hover:bg-card-hover transition-all duration-300 transform hover:scale-105">
+                <Card key={index} className="glass-effect border-0 hover:bg-certificate-accent/20 transition-all duration-300 transform hover:scale-105">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden border-2 border-certificate-accent/40">
                       <img 
                         src={cert.image} 
                         alt={`${cert.title} certification`}
@@ -157,7 +157,7 @@ const About = () => {
                     </div>
                     <h4 className="font-semibold mb-2 text-foreground">{cert.title}</h4>
                     <p className="text-sm text-muted-foreground mb-2">{cert.issuer}</p>
-                    <Badge variant="outline">{cert.year}</Badge>
+                    <Badge variant="outline" className="border-certificate-accent text-certificate-accent">{cert.year}</Badge>
                   </CardContent>
                 </Card>
               ))}

@@ -123,7 +123,7 @@ const ExperienceFlip = () => {
   const getTypeColor = (type: string) => {
     switch (type.toLowerCase()) {
       case 'internship':
-        return 'bg-primary/20 text-primary border-primary/30';
+        return 'bg-intern-accent/30 text-intern-accent border-intern-accent/40';
       case 'project work':
         return 'bg-project-accent/20 text-project-accent border-project-accent/30';
       case 'workshop':
@@ -287,7 +287,7 @@ const ExperienceFlip = () => {
               ].map((tech, index) => (
                 <div 
                   key={tech.name} 
-                  className="glass-effect rounded-lg p-4 text-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-105"
+                  className="glass-effect rounded-lg p-4 text-center hover:bg-tech-accent/30 transition-all duration-300 transform hover:scale-105"
                   style={{ animationDelay: `${0.1 * index}s` }}
                 >
                   {typeof tech.icon === 'string' && tech.icon.includes('.png') ? (

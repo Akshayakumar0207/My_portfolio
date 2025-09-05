@@ -7,7 +7,7 @@ import blockchainImage from "@/assets/blockchain-voting.jpg";
 import eatifyImage from "@/assets/eatify-app.jpg";
 import busTrackingImage from "@/assets/bus-tracking.jpg";
 import pastryShopImage from "@/assets/pastry-shop.jpg";
-import trafficManagement from "@/assets/traffic-management.jpg";
+import mockMateImage from "@/assets/mockmate-platform.jpg";
 import ludoGame from "@/assets/ludo-game.jpg";
 
 const ProjectsFlip = () => {
@@ -68,7 +68,7 @@ const ProjectsFlip = () => {
       id: 5,
       title: "MockMate - Mock Interview Platform",
       summary: "AI-powered mock interview platform for technical skill assessment",
-      image: trafficManagement,
+      image: mockMateImage,
       details: "A comprehensive mock interview platform that uses AI to simulate real technical interviews. Features coding challenges, behavioral questions, real-time feedback, and performance analytics to help candidates prepare for their dream jobs.",
       tech: ["React", "Node.js", "AI/ML", "WebRTC", "MongoDB"],
       links: { github: "#", demo: "#" },

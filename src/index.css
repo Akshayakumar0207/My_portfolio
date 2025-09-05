@@ -39,14 +39,17 @@
 
     --radius: 0.75rem;
 
-    /* Portfolio specific colors */
+    /* Portfolio specific colors - Enhanced Purple Theme */
     --hero-gradient-start: 285 85% 60%;
     --hero-gradient-end: 270 80% 45%;
     --section-gradient: 240 15% 8%;
     --glass-bg: 240 10% 8%;
     --glass-border: 240 15% 20%;
-    --skill-bg: 270 60% 25%;
-    --project-accent: 300 70% 50%;
+    --skill-bg: 280 70% 35%;
+    --project-accent: 290 80% 55%;
+    --certificate-accent: 270 85% 65%;
+    --intern-accent: 285 90% 70%;
+    --tech-accent: 275 80% 60%;
 
     --sidebar-background: 0 0% 98%;
 
