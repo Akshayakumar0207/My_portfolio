@@ -82,7 +82,7 @@ const Footer = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="rounded-full border-glass-border hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-300"
+                  className="rounded-full border-glass-border hover:bg-muted hover:border-muted hover:text-white transition-all duration-300"
                   onClick={() => window.open("mailto:akshaya.kumar@email.com", "_blank")}
                 >
                   <Mail size={18} />

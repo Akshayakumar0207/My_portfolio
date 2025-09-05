@@ -2,7 +2,7 @@ import sqlIcon from "@/assets/sql-icon.png";
 import uiuxIcon from "@/assets/uiux-icon.png";
 import genaiIcon from "@/assets/genai-icon.png";
 import promptIcon from "@/assets/prompt-icon.png";
-import { Briefcase, Calendar, MapPin, Award, ChevronRight } from "lucide-react";
+import { Briefcase, Calendar, MapPin, Award, ChevronRight, GraduationCap, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import FlipCard from "./FlipCard";
 
@@ -157,7 +157,13 @@ const ExperienceFlip = () => {
                       {/* Experience Header */}
                       <div className="flex items-start gap-4 mb-4">
                         <div className="w-14 h-14 rounded-xl gradient-hero flex items-center justify-center flex-shrink-0">
-                          <Briefcase size={24} className="text-white" />
+                          {exp.type === 'Internship' ? (
+                            <GraduationCap size={24} className="text-white" />
+                          ) : exp.type === 'Workshop' ? (
+                            <Users size={24} className="text-white" />
+                          ) : (
+                            <Briefcase size={24} className="text-white" />
+                          )}
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg font-bold text-foreground mb-1">

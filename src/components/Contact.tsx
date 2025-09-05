@@ -312,26 +312,6 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              {/* Response Time */}
-              <Card className="glass-effect border-0">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold text-primary mb-3">Response Time</h4>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div className="flex justify-between">
-                      <span>Email</span>
-                      <span className="text-primary font-medium">Within 24 hours</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Urgent matters</span>
-                      <span className="text-primary font-medium">Same day</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Project discussions</span>
-                      <span className="text-primary font-medium">Within 2-3 days</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
 

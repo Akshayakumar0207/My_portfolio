@@ -33,7 +33,7 @@ const ProjectsFlip = () => {
       details: "A feature-rich food delivery mobile application built with Flutter. Includes restaurant browsing, order management, real-time delivery tracking, payment integration, and user reviews system.",
       tech: ["Flutter", "Dart", "Firebase", "Google Maps API", "Payment Gateway"],
       links: { github: "#", demo: "#" },
-      tags: ["Mobile", "Flutter"],
+      tags: ["Mobile", "Flutter", "Processing"],
       startedAt: "2024-01",
       updatedAt: "2024-03",
       keyAchievement: "Served 500+ orders with 4.8-star rating"
@@ -46,7 +46,7 @@ const ProjectsFlip = () => {
       details: "An intelligent bus tracking system that uses machine learning for accurate ETA predictions. Features GPS tracking, route optimization, passenger capacity monitoring, and real-time notifications.",
       tech: ["Python", "Machine Learning", "GPS API", "React", "MongoDB"],
       links: { github: "#", demo: "#" },
-      tags: ["ML", "IoT"],
+      tags: ["ML", "IoT", "Processing"],
       startedAt: "2023-09",
       updatedAt: "2024-08",
       keyAchievement: "92% ETA accuracy with 50+ daily users"
@@ -66,16 +66,16 @@ const ProjectsFlip = () => {
     },
     {
       id: 5,
-      title: "Dynamic Traffic Management",
-      summary: "AI-powered traffic management system for smart cities",
+      title: "MockMate - Mock Interview Platform",
+      summary: "AI-powered mock interview platform for technical skill assessment",
       image: trafficManagement,
-      details: "An AI-based traffic management system that optimizes traffic flow using real-time data analysis. Features traffic pattern recognition, signal timing optimization, and congestion prediction.",
-      tech: ["IoT Sensors", "Arduino Mega", "TensorFlow", "OpenCV"],
+      details: "A comprehensive mock interview platform that uses AI to simulate real technical interviews. Features coding challenges, behavioral questions, real-time feedback, and performance analytics to help candidates prepare for their dream jobs.",
+      tech: ["React", "Node.js", "AI/ML", "WebRTC", "MongoDB"],
       links: { github: "#", demo: "#" },
-      tags: ["AI", "IoT"],
-      startedAt: "2023-03",
-      updatedAt: "2023-06",
-      keyAchievement: "Reduced traffic congestion by 35%"
+      tags: ["AI", "Interview", "Processing"],
+      startedAt: "2024-08",
+      updatedAt: "2024-12",
+      keyAchievement: "AI-powered feedback system with 95% accuracy"
     },
     {
       id: 6,
