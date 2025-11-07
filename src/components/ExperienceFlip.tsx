@@ -1,41 +1,52 @@
+import * as React from "react";
 import sqlIcon from "@/assets/sql-icon.png";
 import uiuxIcon from "@/assets/uiux-icon.png";
 import genaiIcon from "@/assets/genai-icon.png";
 import promptIcon from "@/assets/prompt-icon.png";
+import certStackQueueJava from "@/assets/java-cer.jpg";
+import certNovitech from "@/assets/fuiistack-cer.jpg";
+import certKaggle from "@/assets/python-cer.jpg";
+import certIIT from "@/assets/flutter-cer.jpg";
 import { Briefcase, Calendar, MapPin, Award, ChevronRight, GraduationCap, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import FlipCard from "./FlipCard";
 
 const ExperienceFlip = () => {
+  const [flippedCerts, setFlippedCerts] = React.useState<Record<number, boolean>>({});
+
+  const toggleCertFlip = (id: number) => {
+    setFlippedCerts((s) => ({ ...s, [id]: !s[id] }));
+  };
+
   const experiences = [
     {
       id: 1,
-      role: "Java Developer Intern",
-      organization: "Tech Solutions Inc.",
-      period: "Jun 2024 - Aug 2024",
-      location: "Remote",
+      role: "Java Intern",
+      organization: "Stack Queue Educational Institution",
+      period: "May 2024 - Jul 2024",
+      location: "Offline",
       type: "Internship",
-      description: "Developed ATM simulation system with advanced security features and transaction management.",
+      description: "Hands-on Java internship focusing on core Java projects and practical exercises.",
       responsibilities: [
-        "Built comprehensive ATM simulation with PIN validation and transaction limits",
-        "Implemented secure authentication system using OOP principles",
-        "Created detailed transaction logging and balance management features",
-        "Developed user-friendly console interface with error handling"
+        "Worked on Java OOP projects and practical exercises",
+        "Implemented data structures and algorithms for project tasks",
+        "Collaborated with mentors for code reviews and improvements"
       ],
       outcomes: [
-        "Successfully delivered fully functional ATM system ahead of deadline",
-        "Achieved 100% test coverage with zero security vulnerabilities",
-        "Received outstanding performance rating from mentor"
+        "Completed multiple hands-on Java assignments",
+        "Improved problem-solving and Java fundamentals"
       ],
-      tech: ["Java", "OOP", "Security", "System Design", "Testing"],
+      tech: ["Java", "OOP", "Data Structures"],
+      image: certStackQueueJava,
+      certificateImage: certStackQueueJava,
       current: false
     },
     {
       id: 2,
       role: "Full Stack Development Intern",
-      organization: "NoviTech R&D",
-      period: "Mar 2024 - May 2024",
-      location: "Chennai, TN",
+      organization: "Novi Tech R&D",
+      period: "Jan 18 - Feb 18",
+      location: "Online",
       type: "Internship",
       description: "Worked on modern web applications using cutting-edge technologies and agile methodologies.",
       responsibilities: [
@@ -50,14 +61,15 @@ const ExperienceFlip = () => {
         "Mentored 2 junior developers on modern development practices"
       ],
       tech: ["React", "Node.js", "MongoDB", "REST API", "Git"],
+      certificateImage: certNovitech,
       current: false
     },
     {
       id: 3,
       role: "Python Development Intern",
       organization: "Besant Technologies",
-      period: "Dec 2023 - Feb 2024",
-      location: "Bangalore, KA",
+      period: "Jan 25 - Feb 25 2025",
+      location: "Online",
       type: "Internship",
       description: "Focused on Python programming, automation, and data analysis projects.",
       responsibilities: [
@@ -72,36 +84,15 @@ const ExperienceFlip = () => {
         "Created comprehensive documentation and training materials"
       ],
       tech: ["Python", "Pandas", "Tkinter", "Machine Learning", "Data Analysis"],
+      certificateImage: certKaggle,
       current: false
     },
     {
       id: 4,
-      role: "Core Java Developer",
-      organization: "Stack Queue Education",
-      period: "Sep 2023 - Nov 2023",
-      location: "Online",
-      type: "Project Work",
-      description: "Developed online application form system with database integration and validation.",
-      responsibilities: [
-        "Designed and implemented online application form with Java backend",
-        "Created MySQL database schema with proper normalization",
-        "Built form validation system with client and server-side checks",
-        "Implemented user authentication and session management"
-      ],
-      outcomes: [
-        "Successfully handled 500+ form submissions without data loss",
-        "Achieved 99.8% form validation accuracy rate",
-        "Completed project 2 weeks ahead of schedule"
-      ],
-      tech: ["Java", "MySQL", "JDBC", "HTML/CSS", "JavaScript"],
-      current: false
-    },
-    {
-      id: 5,
       role: "Flutter Workshop Participant",
-      organization: "Mobile Development Academy",
+      organization: "Gateway Solutions",
       period: "Aug 2023",
-      location: "Coimbatore, TN",
+      location: "Offline",
       type: "Workshop",
       description: "Intensive Flutter development workshop focusing on cross-platform mobile app development.",
       responsibilities: [
@@ -116,6 +107,7 @@ const ExperienceFlip = () => {
         "Networked with 50+ fellow developers and industry experts"
       ],
       tech: ["Flutter", "Dart", "Firebase", "Mobile UI/UX"],
+      certificateImage: certIIT,
       current: false
     }
   ];
@@ -206,9 +198,26 @@ const ExperienceFlip = () => {
                   }
                   back={
                     <div className="h-full flex flex-col">
+                      {/* Certificate image (if exists) */}
+                      {exp.certificateImage && (
+                        <div className="mb-4 flex items-center justify-center">
+                          <img
+                            src={exp.certificateImage}
+                            alt={`${exp.organization} certificate`}
+                            onClick={() => exp.id === 4 && toggleCertFlip(exp.id)}
+                            className={`max-w-full max-h-48 object-contain rounded shadow-lg transition-transform duration-500 cursor-pointer
+                              ${exp.id === 4 ? 'hover:scale-105' : ''}
+                              ${exp.id === 4 && flippedCerts[exp.id] ? 'rotate-y-180' : ''}`}
+                            style={{
+                              transformStyle: exp.id === 4 ? 'preserve-3d' : 'flat'
+                            }}
+                          />
+                        </div>
+                      )}
+
                       <h3 className="text-lg font-bold text-foreground mb-2">{exp.role}</h3>
                       <p className="text-sm text-muted-foreground mb-4">{exp.organization}</p>
-                      
+
                       {/* Technologies */}
                       <div className="mb-4">
                         <h4 className="text-sm font-semibold text-primary mb-2">Technologies:</h4>
@@ -220,7 +229,7 @@ const ExperienceFlip = () => {
                           ))}
                         </div>
                       </div>
-                      
+
                       {/* Responsibilities */}
                       <div className="mb-4">
                         <h4 className="text-sm font-semibold text-primary mb-2 flex items-center gap-1">
@@ -228,7 +237,7 @@ const ExperienceFlip = () => {
                           Key Responsibilities:
                         </h4>
                         <ul className="space-y-1">
-                          {exp.responsibilities.slice(0, 2).map((responsibility, idx) => (
+                          {exp.responsibilities.slice(0, 3).map((responsibility, idx) => (
                             <li key={idx} className="text-xs text-muted-foreground flex items-start gap-2">
                               <div className="w-1.5 h-1.5 rounded-full bg-primary/60 flex-shrink-0 mt-1.5"></div>
                               <span>{responsibility}</span>
@@ -236,7 +245,7 @@ const ExperienceFlip = () => {
                           ))}
                         </ul>
                       </div>
-                      
+
                       {/* Achievements */}
                       <div className="mb-4">
                         <h4 className="text-sm font-semibold text-primary mb-2 flex items-center gap-1">
@@ -244,7 +253,7 @@ const ExperienceFlip = () => {
                           Key Achievements:
                         </h4>
                         <ul className="space-y-1">
-                          {exp.outcomes.slice(0, 2).map((outcome, idx) => (
+                          {exp.outcomes.slice(0, 3).map((outcome, idx) => (
                             <li key={idx} className="text-xs text-muted-foreground flex items-start gap-2">
                               <div className="w-1.5 h-1.5 rounded-full bg-project-accent/60 flex-shrink-0 mt-1.5"></div>
                               <span>{outcome}</span>
@@ -252,6 +261,18 @@ const ExperienceFlip = () => {
                           ))}
                         </ul>
                       </div>
+
+                      {/* What I learned (optional) */}
+                      {Array.isArray((exp as unknown as { learned?: string[] }).learned) && (
+                        <div className="mb-4">
+                          <h4 className="text-sm font-semibold text-primary mb-2">What I learned:</h4>
+                          <ul className="space-y-1">
+                            {((exp as unknown as { learned?: string[] }).learned || []).map((l: string, idx: number) => (
+                              <li key={idx} className="text-xs text-muted-foreground">{l}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   }
                 />

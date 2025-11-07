@@ -89,7 +89,8 @@ const Hero = () => {
                     <img
                       src={profileImage}
                       alt="Akshaya Kumar - Professional Portrait"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
                     />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>

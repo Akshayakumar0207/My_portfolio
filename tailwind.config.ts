@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -98,13 +99,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'rotate-y': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'100%': { transform: 'rotateY(180deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			rotate: {
+				'y-180': 'rotateY(180deg)'
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [animate],
 } satisfies Config;

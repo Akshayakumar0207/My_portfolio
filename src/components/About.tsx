@@ -7,6 +7,7 @@ import certNovitech from "@/assets/cert-novitech.jpg";
 import certLnT from "@/assets/cert-lnt.jpg";
 import certIIT from "@/assets/cert-iit.jpg";
 import certIBMUiUx from "@/assets/cert-ibm-uiux.jpg";
+import certAws from "@/assets/aws-cer.jpg";
 import certInfosysDSA from "@/assets/cert-infosys-dsa.jpg";
 import certStackQueueJava from "@/assets/cert-stack-queue-java.jpg";
 import certNPTELJava from "@/assets/cert-nptel-java.jpg";
@@ -41,8 +42,8 @@ const About = () => {
     { title: "Google Python Course", issuer: "Kaggle", year: "2024", image: certKaggle },
     { title: "Full Stack Development", issuer: "NoviTech R&D", year: "2023", image: certNovitech },
     { title: "Core Java", issuer: "Stack Queue Institution", year: "2023", image: certStackQueueJava },
-    { title: "Advanced Java Programming", issuer: "NPTEL (IIT Madras)", year: "2023", image: certNPTELJava },
-    { title: "UI/UX Designing", issuer: "IBM", year: "2024", image: certIBMUiUx }
+  { title: "Advanced Java Programming", issuer: "NPTEL (IIT Kharagpur)", year: "2023", image: certNPTELJava },
+  { title: "AWS Cloud Architect", issuer: "Amazon Web Services", year: "2025", image: certAws }
   ];
 
   const skills = {
