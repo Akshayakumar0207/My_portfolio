@@ -1,28 +1,45 @@
-import { Trophy, FileText, Users, Award, Calendar, ExternalLink } from "lucide-react";
+import { Trophy, FileText, Users, Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import dtmsPaper from "@/assets/dtms-paper.pptx";
+import paperCitation from "@/assets/paper-cer.jpg";
+
+type ResearchPaper = {
+  id: number;
+  title: string;
+  venue: string;
+  year: string;
+  abstract: string;
+  status: string;
+  authors: string;
+  paperLink: string;
+  citationImage: string;
+  citationLabel?: string;
+};
 
 const Achievements = () => {
-  const research = [
+  const research: ResearchPaper[] = [
     {
       id: 1,
-      title: "Machine Learning Applications in Smart Transportation Systems",
-      venue: "National Conference on Emerging Technologies",
+      title: "IoT Based Dynamic Traffic Management System",
+      venue: "International Conference on Additive Manufacturing Technologies by SERB (New Delhi) at Mahendra Institute of Technology, Namakkal",
       year: "2024",
-      abstract: "This paper explores the implementation of machine learning algorithms in optimizing urban transportation networks, focusing on predictive analytics for traffic flow management and intelligent routing systems.",
-      link: "#",
-      status: "Published",
-      authors: "Akshaya Kumar, Dr. Rajesh Sharma, Prof. Anita Menon"
+      abstract: "Proposes an IoT-driven adaptive control framework that senses real-time congestion levels across urban corridors and dynamically synchronizes traffic signals to reduce wait time, improve emergency routing, and ensure safer commuting.",
+      status: "Presented",
+      authors: "Jayasutha P, Akshaya K, Kavya A, Kavya M",
+      paperLink: dtmsPaper,
+      citationImage: paperCitation,
+      citationLabel: "ICAMT 2024 Certificate of Presentation"
     }
   ];
 
   const achievements = [
     {
       id: 1,
-      title: "Smart City Hackathon - Second Place",
+      title: "Smart India Hackathon",
       year: "2024",
-      note: "Developed an AI-powered traffic management solution that impressed judges with its innovative approach to urban mobility challenges.",
+      note: "Participated twice in the Smart India Hackathon, building AI-powered traffic management solutions that consistently impressed juries with innovation and execution.",
       category: "Competition",
       icon: Trophy
     },
@@ -41,6 +58,14 @@ const Achievements = () => {
       note: "Recognized for exceptional contribution to the organizing committee and successful coordination of technical events.",
       category: "Leadership",
       icon: Users
+    },
+    {
+      id: 5,
+      title: "TANCAM National Level Hackathon",
+      year: "2024",
+      note: "Competed against 500+ teams, cleared two rounds out of three, and secured 23rd place with an innovative smart mobility prototype.",
+      category: "Competition",
+      icon: Trophy
     }
   ];
 
@@ -63,6 +88,8 @@ const Achievements = () => {
     switch (status.toLowerCase()) {
       case 'published':
         return 'bg-green-500/20 text-green-400 border-green-500/30';
+      case 'presented':
+        return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
       case 'under review':
         return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
       case 'draft':
@@ -140,17 +167,33 @@ const Achievements = () => {
                         size="sm" 
                         variant="outline" 
                         className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                        asChild
                       >
-                        <FileText size={14} className="mr-2" />
-                        Read Paper
+                        <a 
+                          href={paper.paperLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          title="Open presentation deck"
+                        >
+                          <FileText size={14} className="mr-2" />
+                          Read Paper
+                        </a>
                       </Button>
                       <Button 
                         size="sm" 
                         variant="outline" 
                         className="border-muted-foreground text-muted-foreground hover:bg-muted hover:text-foreground"
+                        asChild
                       >
-                        <ExternalLink size={14} className="mr-2" />
-                        Citation
+                        <a 
+                          href={paper.citationImage} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          title={paper.citationLabel ?? "View citation proof"}
+                        >
+                          <ExternalLink size={14} className="mr-2" />
+                          Citation
+                        </a>
                       </Button>
                     </div>
                   </CardContent>

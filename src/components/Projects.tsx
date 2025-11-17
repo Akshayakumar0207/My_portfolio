@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 // Import project images
-import blockchainImage from "@/assets/blockchain-voting.jpg";
+import blockchainImage from "@/assets/one-tap.jpg";
 import eatifyImage from "@/assets/eatify-app.jpg";
-import busTrackingImage from "@/assets/bus-tracking.jpg";
+import trackitImage from "@/assets/tracki_logo.jpg";
 import trafficImage from "@/assets/traffic-management.jpg";
 import pastryImage from "@/assets/pastry-shop.jpg";
-import gameImage from "@/assets/plants-zombies.jpg";
+import ecoShopperImage from "@/assets/eco-shopper-logo.png";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -18,7 +18,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Blockchain-based Voting System",
+      title: "One Tap - Blockchain Voting App",
       summary: "Secure and transparent digital voting platform using blockchain technology",
       details: "Built a decentralized voting system ensuring transparency, security, and immutability of votes using smart contracts and cryptographic hashing.",
       tech: ["Blockchain", "Smart Contracts", "Web3", "React", "Node.js"],
@@ -27,7 +27,7 @@ const Projects = () => {
       date: "2024-03",
       image: blockchainImage,
       github: "#",
-      demo: "#",
+      demo: "https://one-tap-voting-3f0a7678.base44.app",
       outcomes: "Successfully demonstrated 99.9% vote integrity with zero tampering incidents in testing"
     },
     {
@@ -46,14 +46,14 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Smart Bus Tracking System",
-      summary: "ML-powered bus tracking with GPS integration and ETA prediction",
-      details: "Intelligent transportation system using machine learning algorithms to predict accurate arrival times, optimize routes, and provide real-time location tracking.",
+      title: "Trackit - Smart Bus Tracking App",
+      summary: "Real-time bus tracking with live location, ETA prediction, and student-friendly alerts",
+      details: "Trackit delivers accurate bus locations, route progress, and push notifications using GPS, ML-powered ETA predictions, and a responsive dashboard for admins and parents.",
       tech: ["Python", "Machine Learning", "GPS API", "React", "TensorFlow"],
       tags: ["ml", "fullstack", "iot"],
       category: "ml",
       date: "2023-11",
-      image: busTrackingImage,
+      image: trackitImage,
       github: "#",
       demo: "#",
       outcomes: "Achieved 95% ETA accuracy with 40% reduction in passenger wait times"
@@ -88,17 +88,17 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: "Plants vs Zombies Game",
-      summary: "Recreation of the classic tower defense game using Python Pygame",
-      details: "Fully functional game with multiple levels, various plant types, zombie AI, sound effects, and scoring system built from scratch using Pygame.",
-      tech: ["Python", "Pygame", "OOP", "Game Development"],
-      tags: ["game", "python"],
-      category: "game",
-      date: "2023-05",
-      image: gameImage,
+      title: "EcoShopper - Sustainable Shopping Assistant",
+      summary: "Mobile companion that guides shoppers toward eco-friendly purchases",
+      details: "EcoShopper scans product details, scores sustainability, and suggests greener alternatives using ML classification, barcode scanning, and a Flutter-powered UI.",
+      tech: ["Flutter", "Firebase", "ML Kit", "REST API", "UX Research"],
+      tags: ["mobile", "ai", "sustainability"],
+      category: "mobile",
+      date: "2024-02",
+      image: ecoShopperImage,
       github: "#",
-      demo: "#",
-      outcomes: "Featured in college gaming showcase with 500+ downloads from peers"
+      demo: "https://eco-shopper-b88276b6.base44.app",
+      outcomes: "Helped early adopters cut plastic-heavy purchases by 40% during pilot"
     }
   ];
 
@@ -173,11 +173,11 @@ const Projects = () => {
                 style={{ animationDelay: `${0.1 * index}s` }}
               >
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                <div className="relative h-48 overflow-hidden rounded-t-lg bg-white/80 flex items-center justify-center">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 p-4"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4">
@@ -237,23 +237,29 @@ const Projects = () => {
                     </p>
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Button */}
                   <div className="flex gap-3 pt-2">
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="flex-1 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-                    >
-                      <Github size={14} className="mr-2" />
-                      Code
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      className="flex-1 gradient-hero text-white hover:opacity-90 transition-all duration-300"
-                    >
-                      <ExternalLink size={14} className="mr-2" />
-                      Demo
-                    </Button>
+                    {project.demo && project.demo !== "#" ? (
+                      <Button 
+                        size="sm" 
+                        className="flex-1 gradient-hero text-white hover:opacity-90 transition-all duration-300"
+                        asChild
+                      >
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink size={14} className="mr-2" />
+                          Demo
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button 
+                        size="sm" 
+                        className="flex-1 gradient-hero text-white opacity-60 cursor-not-allowed"
+                        disabled
+                      >
+                        <ExternalLink size={14} className="mr-2" />
+                        Demo
+                      </Button>
+                    )}
                   </div>
 
                   {/* Updated Indicator */}

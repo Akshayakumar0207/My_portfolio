@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button";
 import FlipCard from "./FlipCard";
 import blockchainImage from "@/assets/blockchain-voting.jpg";
 import eatifyImage from "@/assets/eatify-app.jpg";
-import busTrackingImage from "@/assets/bus-tracking.jpg";
+import trackitImage from "@/assets/tracki_logo.jpg";
 import pastryShopImage from "@/assets/pastry-shop.jpg";
 import mockMateImage from "@/assets/mockmate-platform.jpg";
-import ludoGame from "@/assets/ludo-game.jpg";
+import ecoShopperLogo from "@/assets/eco-shopper-logo.png";
 
 const ProjectsFlip = () => {
   const projects = [
     {
       id: 1,
-      title: "Blockchain-based Voting System",
+      title: "One Tap - Blockchain Voting App",
       summary: "Secure, transparent voting platform using blockchain technology",
       image: blockchainImage,
       details: "A comprehensive blockchain-based voting system that ensures transparency, security, and immutability. Features smart contracts for vote verification, real-time vote counting, and voter anonymity protection.",
       tech: ["Blockchain", "Smart Contracts", "React", "Web3.js", "Solidity"],
-      links: { github: "#", demo: "#" },
+      links: { github: "#", demo: "https://one-tap-voting-3f0a7678.base44.app" },
       tags: ["Blockchain", "Security"],
       startedAt: "2024-03",
       updatedAt: "2024-05",
@@ -40,16 +40,16 @@ const ProjectsFlip = () => {
     },
     {
       id: 3,
-      title: "Smart Bus Tracking System",
-      summary: "ML-powered bus tracking with GPS and ETA predictions",
-      image: busTrackingImage,
-      details: "An intelligent bus tracking system that uses machine learning for accurate ETA predictions. Features GPS tracking, route optimization, passenger capacity monitoring, and real-time notifications.",
-      tech: ["Python", "Machine Learning", "GPS API", "React", "MongoDB"],
+      title: "Trackit - Smart Bus Tracking App",
+      summary: "Real-time bus tracking with live location, ETA prediction, and student alerts",
+      image: trackitImage,
+      details: "Trackit connects GPS-enabled buses with a central dashboard so students and parents see live location, stop ETAs, and receive automatic notifications. Admins get fleet health analytics and route optimization suggestions.",
+      tech: ["React", "Node.js", "Firebase", "GPS API", "ML Models"],
       links: { github: "#", demo: "#" },
-      tags: ["ML", "IoT", "Processing"],
+      tags: ["IoT", "Mobile", "Logistics"],
       startedAt: "2023-09",
       updatedAt: "2024-08",
-      keyAchievement: "92% ETA accuracy with 50+ daily users"
+      keyAchievement: "Cut average wait times by 40% across pilot routes"
     },
     {
       id: 4,
@@ -79,16 +79,16 @@ const ProjectsFlip = () => {
     },
     {
       id: 6,
-      title: "Ludo Game with AI",
-      summary: "Python-based Ludo game with AI opponents and multiplayer support",
-      image: ludoGame,
-      details: "A digital recreation of the classic Ludo board game featuring AI opponents, multiplayer gameplay, and modern graphics. Includes intelligent AI players, game state management, and interactive UI with sound effects.",
-      tech: ["Python", "Pygame", "AI Algorithms", "Game Logic", "UI Design"],
-      links: { github: "#", demo: "#" },
-      tags: ["Game", "AI"],
-      startedAt: "2022-12",
-      updatedAt: "2023-02",
-      keyAchievement: "AI opponents with 85% win rate"
+      title: "EcoShopper - Sustainable Shopping Assistant",
+      summary: "Mobile companion that recommends eco-friendly products at purchase time",
+      image: ecoShopperLogo,
+      details: "EcoShopper scans barcodes, pulls sustainability scores from a curated dataset, and nudges shoppers toward greener alternatives. Built with Flutter and Firebase, it tracks impact metrics and personal sustainability goals.",
+      tech: ["Flutter", "Firebase", "TensorFlow Lite", "REST APIs", "UX Research"],
+      links: { github: "#", demo: "https://eco-shopper-b88276b6.base44.app" },
+      tags: ["Mobile", "AI", "Sustainability"],
+      startedAt: "2024-01",
+      updatedAt: "2024-03",
+      keyAchievement: "Helped beta users reduce plastic-heavy buys by 40%"
     }
   ];
 
@@ -121,11 +121,11 @@ const ProjectsFlip = () => {
                   front={
                     <div className="h-full flex flex-col">
                       {/* Project Image */}
-                      <div className="h-48 overflow-hidden rounded-t-lg">
+                      <div className="h-48 overflow-hidden rounded-t-lg bg-white/80 flex items-center justify-center">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                          className="w-full h-full object-contain transition-transform duration-300 hover:scale-105 p-4"
                         />
                       </div>
                       
@@ -140,10 +140,6 @@ const ProjectsFlip = () => {
                         
                         {/* Action Buttons */}
                         <div className="flex gap-2 mt-4">
-                          <Button size="sm" variant="outline" className="flex-1">
-                            <Github size={16} className="mr-2" />
-                            Code
-                          </Button>
                           <Button size="sm" className="gradient-hero text-white flex-1">
                             <ExternalLink size={16} className="mr-2" />
                             Demo
@@ -200,18 +196,6 @@ const ProjectsFlip = () => {
                       
                       {/* Action Buttons */}
                       <div className="flex gap-2 mt-4">
-                        <Button 
-                          size="sm" 
-                          variant="outline" 
-                          className="flex-1"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.open(project.links.github, '_blank');
-                          }}
-                        >
-                          <Github size={16} className="mr-2" />
-                          Code
-                        </Button>
                         <Button 
                           size="sm" 
                           className="gradient-hero text-white flex-1"

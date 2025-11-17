@@ -52,23 +52,23 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission (replace with actual backend integration)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // For now, we'll just show success message
-      // In a real app, this would send to Supabase/Firebase
-      console.log("Form submitted:", formData);
-      
+      const to = "akshayakumarcse02@gmail.com";
+      const subject = encodeURIComponent(`Portfolio contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+
+      const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, "_blank");
+
       setIsSubmitted(true);
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        title: "Opening your email app...",
+        description: "Your message details have been passed to your email client. You can review and send it to Akshaya.",
       });
 
-      // Reset form
       setFormData({ name: "", email: "", message: "" });
-      
-      // Reset success state after 5 seconds
+
       setTimeout(() => setIsSubmitted(false), 5000);
       
     } catch (error) {
@@ -86,14 +86,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "akshaya.kumar@email.com",
-      href: "mailto:akshaya.kumar@email.com"
+      value: "akshayakumarcse02@gmail.com",
+      href: "mailto:akshayakumarcse02@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210"
+      value: "+91 88701 60044",
+      href: "tel:+918870160044"
     },
     {
       icon: MapPin,
@@ -107,19 +107,19 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/akshayakumar",
+      href: "https://github.com/Akshayakumar0207",
       color: "hover:text-gray-400"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/akshayakumar",
+      href: "https://www.linkedin.com/in/akshaya-kumar-74a439300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       color: "hover:text-blue-400"
     },
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://instagram.com/akshaya.codes",
+      href: "https://www.instagram.com/itz_akshayakumar?igsh=NnZnczA4M21idzdn",
       color: "hover:text-pink-400"
     }
   ];
@@ -338,7 +338,13 @@ const Contact = () => {
                     size="lg" 
                     variant="outline"
                     className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-                    onClick={() => window.open("mailto:akshaya.kumar@email.com", "_blank")}
+                    onClick={() => {
+                      const to = "akshayakumarcse02@gmail.com";
+                      const subject = encodeURIComponent("Hello Akshaya 👋");
+                      const body = encodeURIComponent("Hi Akshaya,\n\nI came across your portfolio and would like to connect with you regarding...");
+                      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
+                      window.open(gmailLink, "_blank");
+                    }}
                   >
                     Send Direct Email
                   </Button>
