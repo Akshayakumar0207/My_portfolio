@@ -52,7 +52,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const to = "akshayakumarcse02@gmail.com";
+      const to = "akshayakumarmit@gmail.com";
       const subject = encodeURIComponent(`Portfolio contact from ${formData.name}`);
       const body = encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -86,8 +86,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "akshayakumarcse02@gmail.com",
-      href: "mailto:akshayakumarcse02@gmail.com"
+      value: "akshayakumarmit@gmail.com",
+      href: "mailto:akshayakumarmit@gmail.com"
     },
     {
       icon: Phone,
@@ -339,7 +339,7 @@ const Contact = () => {
                     variant="outline"
                     className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
                     onClick={() => {
-                      const to = "akshayakumarcse02@gmail.com";
+                      const to = "akshayakumarmit@gmail.com";
                       const subject = encodeURIComponent("Hello Akshaya 👋");
                       const body = encodeURIComponent("Hi Akshaya,\n\nI came across your portfolio and would like to connect with you regarding...");
                       const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;

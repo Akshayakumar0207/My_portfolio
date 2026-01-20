@@ -113,7 +113,7 @@ const About = () => {
                     {/* Content Card */}
                     <div className={`w-full ${index % 2 === 0 ? 'pr-1/2 mr-8' : 'pl-1/2 ml-8'}`}>
                       <Card className={`glass-effect border-0 transition-all duration-300 hover:bg-card-hover transform hover:scale-105 ${edu.current ? 'ring-2 ring-primary' : ''}`}>
-                        <CardContent className="p-6">
+                        <CardContent className="p-6 min-h-[12rem]">
                           <div className="flex flex-col gap-3">
                             <h4 className="text-lg font-semibold text-primary">
                               {edu.degree}

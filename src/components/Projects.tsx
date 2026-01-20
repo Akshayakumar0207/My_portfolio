@@ -41,7 +41,7 @@ const Projects = () => {
       date: "2024-01",
       image: eatifyImage,
       github: "#",
-      demo: "#",
+      demo: "https://agile-woven-19894958.figma.site",
       outcomes: "Designed for 10,000+ concurrent users with 3-second average order processing time"
     },
     {
@@ -55,7 +55,7 @@ const Projects = () => {
       date: "2023-11",
       image: trackitImage,
       github: "#",
-      demo: "#",
+      demo: "https://track-it-1b978c5d.base44.app",
       outcomes: "Achieved 95% ETA accuracy with 40% reduction in passenger wait times"
     },
     {
@@ -83,7 +83,7 @@ const Projects = () => {
       date: "2023-07",
       image: pastryImage,
       github: "#",
-      demo: "#",
+      demo: "https://stately-maamoul-cc3649.netlify.app",
       outcomes: "Increased online orders by 150% for the local business within first month"
     },
     {

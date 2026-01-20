@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
 interface FlipCardProps {
@@ -13,6 +13,15 @@ const FlipCard: React.FC<FlipCardProps> = ({ front, back, className = "" }) => {
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
+
+  // Automatically flip back to front when the user scrolls
+  useEffect(() => {
+    if (!isFlipped) return;
+
+    const onScroll = () => setIsFlipped(false);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isFlipped]);
 
   return (
     <div className={`flip-card ${isFlipped ? 'flipped' : ''} ${className}`} onClick={handleFlip}>

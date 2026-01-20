@@ -32,7 +32,7 @@ const ProjectsFlip = () => {
       image: eatifyImage,
       details: "A feature-rich food delivery mobile application built with Flutter. Includes restaurant browsing, order management, real-time delivery tracking, payment integration, and user reviews system.",
       tech: ["Flutter", "Dart", "Firebase", "Google Maps API", "Payment Gateway"],
-      links: { github: "#", demo: "#" },
+      links: { github: "#", demo: "https://agile-woven-19894958.figma.site" },
       tags: ["Mobile", "Flutter", "Processing"],
       startedAt: "2024-01",
       updatedAt: "2024-03",
@@ -45,7 +45,7 @@ const ProjectsFlip = () => {
       image: trackitImage,
       details: "Trackit connects GPS-enabled buses with a central dashboard so students and parents see live location, stop ETAs, and receive automatic notifications. Admins get fleet health analytics and route optimization suggestions.",
       tech: ["React", "Node.js", "Firebase", "GPS API", "ML Models"],
-      links: { github: "#", demo: "#" },
+      links: { github: "#", demo: "https://track-it-1b978c5d.base44.app" },
       tags: ["IoT", "Mobile", "Logistics"],
       startedAt: "2023-09",
       updatedAt: "2024-08",
@@ -58,7 +58,7 @@ const ProjectsFlip = () => {
       image: pastryShopImage,
       details: "A modern, responsive e-commerce website for a local pastry shop. Features product catalog, online ordering, payment processing, inventory management, and customer review system.",
       tech: ["HTML5", "CSS3", "JavaScript"],
-      links: { github: "#", demo: "#" },
+      links: { github: "#", demo: "https://stately-maamoul-cc3649.netlify.app" },
       tags: ["Frontend", "E-commerce"],
       startedAt: "2023-06",
       updatedAt: "2023-08",
@@ -71,7 +71,7 @@ const ProjectsFlip = () => {
       image: mockMateImage,
       details: "A comprehensive mock interview platform that uses AI to simulate real technical interviews. Features coding challenges, behavioral questions, real-time feedback, and performance analytics to help candidates prepare for their dream jobs.",
       tech: ["React", "Node.js", "AI/ML", "WebRTC", "MongoDB"],
-      links: { github: "#", demo: "#" },
+      links: { github: "#", demo: "https://mock-mate-1.lovable.app" },
       tags: ["AI", "Interview", "Processing"],
       startedAt: "2024-08",
       updatedAt: "2024-12",
@@ -140,7 +140,14 @@ const ProjectsFlip = () => {
                         
                         {/* Action Buttons */}
                         <div className="flex gap-2 mt-4">
-                          <Button size="sm" className="gradient-hero text-white flex-1">
+                          <Button 
+                            size="sm" 
+                            className="gradient-hero text-white flex-1"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(project.links.demo, '_blank');
+                            }}
+                          >
                             <ExternalLink size={16} className="mr-2" />
                             Demo
                           </Button>

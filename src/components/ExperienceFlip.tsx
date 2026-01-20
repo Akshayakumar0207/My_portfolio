@@ -293,6 +293,8 @@ const ExperienceFlip = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {[
+                { name: "AIML", icon: "🧠" },
+                { name: "Full-Stack Python", icon: "🌐" },
                 { name: "React", icon: "⚛️" },
                 { name: "SQL", icon: sqlIcon },
                 { name: "Python", icon: "🐍" },
@@ -308,7 +310,7 @@ const ExperienceFlip = () => {
               ].map((tech, index) => (
                 <div 
                   key={tech.name} 
-                  className="glass-effect rounded-lg p-4 text-center hover:bg-tech-accent/30 transition-all duration-300 transform hover:scale-105"
+                  className="glass-effect rounded-lg p-4 text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30"
                   style={{ animationDelay: `${0.1 * index}s` }}
                 >
                   {typeof tech.icon === 'string' && tech.icon.includes('.png') ? (
