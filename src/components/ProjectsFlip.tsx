@@ -4,10 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import FlipCard from "./FlipCard";
 import blockchainImage from "@/assets/blockchain-voting.jpg";
-import eatifyImage from "@/assets/eatify-app.jpg";
+import eatifyImage from "@/assets/eatify-logo.png";
 import trackitImage from "@/assets/tracki_logo.jpg";
 import pastryShopImage from "@/assets/pastry-shop.jpg";
-import mockMateImage from "@/assets/mockmate-platform.jpg";
+import mockMateImage from "@/assets/mock-mate-logo.png";
 import ecoShopperLogo from "@/assets/eco-shopper-logo.png";
 
 const ProjectsFlip = () => {
