@@ -1,0 +1,133 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 2000
+>>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(AKSHAYA KUMAR) Tj
+0 -30 Td
+/F1 14 Tf
+(Computer Science Engineer & Full Stack Developer) Tj
+0 -40 Td
+/F1 12 Tf
+(Email: akshaya.kumar@email.com) Tj
+0 -20 Td
+(Phone: +91 98765 43210) Tj
+0 -20 Td
+(Location: Salem, Tamil Nadu, India) Tj
+0 -40 Td
+/F1 16 Tf
+(EDUCATION) Tj
+0 -30 Td
+/F1 12 Tf
+(B.E. - Computer Science & Engineering) Tj
+0 -15 Td
+(Mahendra Institute of Technology, Namakkal \(2022-2026\)) Tj
+0 -15 Td
+(CGPA: 8.5) Tj
+0 -20 Td
+(Higher Secondary - Govt. Girls Model School, Salem \(2020-2022\) - 83%) Tj
+0 -15 Td
+(SSLC - Govt. Girls Model School, Salem \(2018-2020\) - 78%) Tj
+0 -40 Td
+/F1 16 Tf
+(SKILLS) Tj
+0 -30 Td
+/F1 12 Tf
+(Frontend: HTML, CSS, JavaScript, Flutter, UI/UX Design) Tj
+0 -15 Td
+(Backend: Java \(Core & OOP\), Python) Tj
+0 -15 Td
+(Database: MySQL, Firebase, MongoDB) Tj
+0 -15 Td
+(Tools: Git, GitHub, Figma, Android Studio, VS Code) Tj
+0 -40 Td
+/F1 16 Tf
+(PROJECTS) Tj
+0 -30 Td
+/F1 12 Tf
+(• Blockchain-based voting system) Tj
+0 -15 Td
+(• Eatify \(food delivery app in Flutter\)) Tj
+0 -15 Td
+(• Bus tracking system with ML, GPS, ETA) Tj
+0 -15 Td
+(• Dynamic Traffic Management system) Tj
+0 -15 Td
+(• Pastry shop website) Tj
+0 -15 Td
+(• Plants vs Zombies-style Pygame game) Tj
+0 -40 Td
+/F1 16 Tf
+(CERTIFICATIONS) Tj
+0 -30 Td
+/F1 12 Tf
+(• IBM - Data Structures & Algorithms) Tj
+0 -15 Td
+(• Google Python Course \(Kaggle\)) Tj
+0 -15 Td
+(• IIT Madras - Machine Learning Fundamentals) Tj
+0 -15 Td
+(• NoviTech R&D - Full Stack Development) Tj
+0 -15 Td
+(• L&T EduTech - Advanced Java Programming) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000074 00000 n 
+0000000131 00000 n 
+0000000274 00000 n 
+0000002327 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+2404
+%%EOF
