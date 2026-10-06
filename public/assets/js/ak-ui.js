@@ -72,4 +72,25 @@
       $(this).toggleClass("is-open");
     });
   }
+
+  /* ---- 3D tilt + moving glare on the glass cards (mouse only) ---- */
+  if (window.matchMedia("(pointer:fine)").matches && !window.matchMedia("(prefers-reduced-motion:reduce)").matches) {
+    $(".fl-card").each(function () {
+      var el = this, raf = null;
+      el.addEventListener("mousemove", function (e) {
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          el.style.setProperty("--ry", ((px - 0.5) * 10).toFixed(2) + "deg");
+          el.style.setProperty("--rx", ((0.5 - py) * 8).toFixed(2) + "deg");
+          el.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+          el.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+        });
+      });
+      el.addEventListener("mouseleave", function () {
+        el.style.setProperty("--rx", "0deg"); el.style.setProperty("--ry", "0deg");
+      });
+    });
+  }
 })(jQuery);

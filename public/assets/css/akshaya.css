@@ -95,3 +95,59 @@ body.ak-cursor-on.ak-hot #ball{width:40px;height:40px;background-color:hsl(var(-
 .ak-cert img{aspect-ratio:5/4}
 body.is-loading{overflow:hidden}
 .ak-actions{display:flex;gap:28px;flex-wrap:wrap}
+
+/* ---------- Freelance: 3D glass morphism, strictly black & white ---------- */
+.fl-area{position:relative;background:#0b0b0b;color:#fff;padding:140px 0 150px;overflow:hidden;isolation:isolate}
+.fl-area::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 45%,#000 20%,transparent 75%)}
+.fl-orb{position:absolute;border-radius:50%;filter:blur(120px);z-index:-1;animation:fl-drift 20s ease-in-out infinite alternate}
+.fl-orb-a{width:560px;height:560px;left:-160px;top:80px;background:#fff;opacity:.2}
+.fl-orb-b{width:520px;height:520px;right:-140px;top:36%;background:#9a9a9a;opacity:.26;animation-delay:-7s}
+.fl-orb-c{width:440px;height:440px;left:40%;bottom:-170px;background:#fff;opacity:.14;animation-delay:-12s}
+@keyframes fl-drift{to{transform:translate3d(70px,-40px,0) scale(1.12)}}
+.fl-area .sb-project-heading h2,.fl-area .sb-eyebrow{color:#fff}
+.fl-area .sb-project-heading p{color:rgba(255,255,255,.72)}
+.fl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;margin-top:56px;perspective:1500px}
+
+.fl-card{position:relative;display:flex;flex-direction:column;padding:16px;border-radius:32px;color:#fff;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .35s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.fl-glass{position:absolute;inset:0;border-radius:inherit;pointer-events:none;overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.05) 55%,rgba(255,255,255,.12));
+  border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(26px) saturate(120%);backdrop-filter:blur(26px) saturate(120%);
+  box-shadow:0 44px 90px rgba(0,0,0,.65),0 12px 28px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.1),inset 0 0 46px rgba(255,255,255,.05);
+  transition:background .5s,border-color .5s,box-shadow .5s}
+.fl-glass::before{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.34),transparent 45%);opacity:0;transition:opacity .35s}
+.fl-card:hover .fl-glass::before{opacity:1}
+.fl-card:hover .fl-glass,.fl-card:focus-within .fl-glass{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(238,238,238,.94));border-color:#fff;box-shadow:0 50px 110px rgba(0,0,0,.7),0 0 90px rgba(255,255,255,.22),inset 0 1px 0 #fff,inset 0 -2px 0 rgba(0,0,0,.08)}
+.fl-card:hover .fl-glass::before,.fl-card:focus-within .fl-glass::before{background:radial-gradient(520px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.9),transparent 50%)}
+
+.fl-media{position:relative;z-index:1;border-radius:22px;overflow:hidden;aspect-ratio:16/10;background:#111;cursor:pointer;transform:translateZ(46px);box-shadow:0 26px 50px rgba(0,0,0,.55);transition:box-shadow .5s}
+.fl-card:hover .fl-media{box-shadow:0 30px 56px rgba(0,0,0,.35)}
+.fl-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.fl-card:hover .fl-media img{transform:scale(1.05)}
+.fl-badge{position:absolute;left:14px;top:14px;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(11,11,11,.7);border:1px solid rgba(255,255,255,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.fl-glyph{display:grid;place-items:center;cursor:default;background:radial-gradient(circle at 28% 18%,rgba(255,255,255,.4),transparent 52%),radial-gradient(circle at 85% 95%,rgba(255,255,255,.14),transparent 55%),linear-gradient(160deg,#242424,#050505)}
+.fl-glyph i{font-size:clamp(90px,10vw,150px);color:#fff;filter:drop-shadow(0 20px 22px rgba(0,0,0,.7));transform:translateZ(30px)}
+
+.fl-body{position:relative;z-index:1;display:flex;flex-direction:column;flex:1;padding:26px 14px 12px;transform:translateZ(30px)}
+.fl-kick{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);transition:color .4s}
+.fl-body h3{color:#fff;font-size:clamp(26px,2.6vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:700;margin:12px 0 14px;transition:color .4s}
+.fl-body p{color:rgba(255,255,255,.8);font-size:17px;line-height:1.65;margin:0 0 20px;transition:color .4s}
+.fl-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0}
+.fl-chips li{list-style:none;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:background .3s,border-color .3s,color .3s}
+.fl-chips li:hover{background:#fff;border-color:#fff;color:#0b0b0b}
+.fl-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto}
+.fl-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s,transform .3s}
+.fl-btn:hover,.fl-btn:focus-visible{background:#fff;border-color:#fff;color:#0b0b0b;transform:translateY(-2px)}
+
+/* card turns white: text flips to black, controls flip to black */
+.fl-card:hover .fl-kick,.fl-card:focus-within .fl-kick{color:rgba(11,11,11,.6)}
+.fl-card:hover .fl-body h3,.fl-card:focus-within .fl-body h3{color:#0b0b0b}
+.fl-card:hover .fl-body p,.fl-card:focus-within .fl-body p{color:rgba(11,11,11,.78)}
+.fl-card:hover .fl-chips li,.fl-card:focus-within .fl-chips li{border-color:rgba(11,11,11,.55);background:transparent;color:#0b0b0b}
+.fl-card:hover .fl-chips li:hover{background:#0b0b0b;border-color:#0b0b0b;color:#fff}
+.fl-card:hover .fl-btn,.fl-card:focus-within .fl-btn{background:#0b0b0b;border-color:#0b0b0b;color:#fff}
+.fl-card:hover .fl-btn:hover,.fl-card:hover .fl-btn:focus-visible{background:transparent;color:#0b0b0b}
+.fl-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.fl-card:hover .fl-btn:focus-visible{outline-color:#0b0b0b}
+.sb-project-details-copy p strong{color:#fff}
+@media (max-width:991px){.fl-grid{grid-template-columns:1fr}.fl-area{padding:100px 0 110px}}
+@media (hover:none),(prefers-reduced-motion:reduce){.fl-card{transform:none!important}.fl-orb{animation:none}}

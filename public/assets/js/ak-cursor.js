@@ -13,7 +13,7 @@
     var m = c.match(/[\d.]+/g);
     if (!m) return null;
     var a = m.length > 3 ? parseFloat(m[3]) : 1;
-    if (a < 0.1) return null;
+    if (a < 0.5) return null;
     return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255;
   }
   function isDark(el) {

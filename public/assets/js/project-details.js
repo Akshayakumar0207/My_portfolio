@@ -5,7 +5,7 @@
   if (!overlay) return;
 
   var closeButton = overlay.querySelector("[data-project-details-close]");
-  var cards = document.querySelectorAll(".sb-project-card[data-project-id]");
+  var cards = document.querySelectorAll("[data-project-id]");
   var detailBlocks = overlay.querySelectorAll("[data-project-detail]");
   var projectStateKey = "sb-project-details";
   var shotObserver;
@@ -132,7 +132,7 @@
   cards.forEach(function (card) {
     var id = card.getAttribute("data-project-id");
 
-    var media = card.querySelector(".sb-project-card-media");
+    var media = card.querySelector(".sb-project-card-media, .fl-media");
     if (media) {
       media.addEventListener("click", function (event) {
         if (event.target.closest("a")) return;

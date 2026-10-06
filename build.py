@@ -6,7 +6,7 @@ L = dict(gh="https://github.com/Akshayakumar0207", li="https://www.linkedin.com/
 NAME = "Akshaya Kumar"
 IMG = "/assets/images/"
 
-from projects_data import projects
+from projects_data import projects, freelance, ngo
 services = [
  ("Frontend Development", ["React.js","JavaScript","HTML & CSS","Figma"]),
  ("Backend Engineering", ["Python","FastAPI","Django","Node.js"]),
@@ -34,8 +34,8 @@ awards = ["Smart India Hackathon · 2024","Best Technical Presentation · 2024",
 stack = ["HTML5","CSS3","JavaScript","React","Python","FastAPI","Django","Flask","Node.js","React Native","Flutter","Firebase","MySQL","MongoDB","PostgreSQL","Docker","AWS","Git","Figma","Supabase","Vercel"]
 
 PILL = "text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3"
-MENU = ["Home","About","Skills","Projects","Experience","Contact"]
-MENU_ID = ["home","about","skills","projects","experience","contact"]
+MENU = ["Home","About","Skills","Projects","Freelance","Experience","Contact"]
+MENU_ID = ["home","about","skills","projects","freelance","experience","contact"]
 menu_li = "\n".join(f'<li><a{" class=\"color-active\"" if i==0 else ""} href="#{MENU_ID[i]}">{m}</a></li>' for i,m in enumerate(MENU))
 SOC = "tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md"
 FSOC = "tw-w-11 tw-h-101 lh-1 d-inline-flex align-items-center justify-content-center tw-rounded-lg tw-text-xl text-heading hover-bg-main-600 hover-text-heading"
@@ -63,9 +63,9 @@ n = len(projects)
 cards = ""; details = ""
 def sec(title, inner):
     return f'<section class="sb-project-details-section"><div class="sb-project-details-heading"><h3>{title}</h3><div class="sb-project-details-copy">{inner}</div></div></section>\n'
-for i,p in enumerate(projects):
+for i,p in enumerate(projects + freelance):
     lk = "".join(f'<a href="{u}" target="_blank" rel="noopener noreferrer">{E(l)} <i class="ph ph-arrow-up-right"></i></a>' for l,u in p['links'])
-    cards += f'''<article class="sb-project-card" data-project-id="{p['id']}">
+    card_html = f'''<article class="sb-project-card" data-project-id="{p['id']}">
 <div class="sb-project-card-media" data-project-details-trigger="{p['id']}" role="button" tabindex="0">
 <img src="{IMG}projects/{p['card']}" alt="{E(p['kick'])} {E(p['title'])}">
 <span class="sb-project-index">0{i+1} / 0{n}</span>
@@ -84,22 +84,44 @@ for i,p in enumerate(projects):
 </div>
 </article>
 '''
+    if not p.get('free'): cards += card_html
+    lab = p.get('label') or f"0{i+1} / 0{n}"
     body = sec("What I built", "".join(f"<p>{E(x)}</p>" for x in p['built']))
     if p.get('features'): body += sec("Core features", '<ul class="sb-project-details-list">'+"".join(f"<li>{E(x)}</li>" for x in p['features'])+'</ul>')
     if p.get('workflow'): body += sec("Workflow", '<ul class="sb-project-details-list">'+"".join(f"<li><strong>{E(a)}:</strong> {E(b)}</li>" for a,b in p['workflow'])+'</ul>')
     if p.get('arch'): body += sec(E(p['arch_title']), '<div class="sb-project-details-architecture">'+"".join(f"<div><small>{E(a)}</small><strong>{E(b)}</strong></div>" for a,b in p['arch'])+'</div>')
-    if p.get('decisions'): body += sec("Technical decisions", "".join(f"<p>{E(x)}</p>" for x in p['decisions']))
+    if p.get('decisions'): body += sec("Technical decisions", "".join((f"<p><strong>{E(x[0])}.</strong> {E(x[1])}</p>" if isinstance(x, tuple) else f"<p>{E(x)}</p>") for x in p['decisions']))
     body += sec("Tech stack", '<div class="sb-project-details-tech">'+"".join(f"<span>{E(t)}</span>" for t in p['tech'])+'</div>')
     shots = "".join(f'<figure class="sb-project-details-shot"><img src="{IMG}projects/{f}" alt="{E(p["kick"])} – {E(c)}" loading="lazy" decoding="async"><figcaption>{E(c)}</figcaption></figure>' for f,c in p['gallery'])
     body += sec("Project images", f'<div class="sb-project-details-gallery">{shots}</div>')
     details += f'''<article data-project-detail="{p['id']}" hidden>
 <header class="sb-project-details-hero">
-<span class="sb-project-details-kicker">0{i+1} / 0{n} · {E(p['kick'])}</span>
+<span class="sb-project-details-kicker">{lab} · {E(p['kick'])}</span>
 <h2 tabindex="-1">{E(p['title'])}</h2>
 <p class="sb-project-details-summary">{E(p['sum'])}</p>
 <div class="sb-project-details-actions">{lk}</div>
 </header>
 {body}</article>
+'''
+
+fl_cards = ""
+for k,p in enumerate(freelance):
+    chips = "".join(f"<li>{E(t)}</li>" for t in p['tech'][:6])
+    fl_cards += f'''<article class="fl-card" data-project-id="{p['id']}">
+<span class="fl-glass" aria-hidden="true"></span>
+<div class="fl-media" role="button" tabindex="0" aria-label="Open {E(p['kick'])} case study"><img src="{IMG}projects/{p['card']}" alt="{E(p['kick'])} preview" loading="lazy"><span class="fl-badge">Own product</span></div>
+<div class="fl-body"><span class="fl-kick">Freelance · 0{k+1} / 0{len(freelance)+1}</span><h3>{E(p['title'])}</h3><p>{E(p['sum'])}</p>
+<ul class="fl-chips">{chips}</ul>
+<div class="fl-actions"><a class="fl-btn" href="#" data-project-details-trigger="{p['id']}">See details <i class="ph ph-arrow-up-right"></i></a><a class="fl-btn" href="{p['links'][0][1]}" target="_blank" rel="noopener noreferrer">{E(p['links'][0][0])} <i class="ph ph-arrow-up-right"></i></a></div></div>
+</article>
+'''
+fl_cards += f'''<article class="fl-card">
+<span class="fl-glass" aria-hidden="true"></span>
+<div class="fl-media fl-glyph" aria-hidden="true"><i class="ph ph-heart"></i><span class="fl-badge">Client work</span></div>
+<div class="fl-body"><span class="fl-kick">Freelance · 0{len(freelance)+1} / 0{len(freelance)+1}</span><h3>{E(ngo['kick'])}: {E(ngo['title'])}</h3><p>{E(ngo['sum'])}</p>
+<ul class="fl-chips">{"".join(f"<li>{E(t)}</li>" for t in ngo['tech'])}</ul>
+<div class="fl-actions"><a class="fl-btn" href="{ngo['link'][1]}" target="_blank" rel="noopener noreferrer">{ngo['link'][0]} <i class="ph ph-arrow-up-right"></i></a></div></div>
+</article>
 '''
 
 exp = ""
@@ -299,6 +321,15 @@ download cv
 <p>Six featured builds, shown simply so each project stays visible and easy to explore.</p></div>
 <div class="sb-project-list">
 {cards}</div>
+</div>
+</section>
+
+<section class="fl-area" id="freelance">
+<span class="fl-orb fl-orb-a" aria-hidden="true"></span><span class="fl-orb fl-orb-b" aria-hidden="true"></span><span class="fl-orb fl-orb-c" aria-hidden="true"></span>
+<div class="container tw-container-1800-px">
+<div class="sb-project-heading"><div><span class="sb-eyebrow">Freelance</span><h2>Sites I built for clients and for myself.</h2></div>
+<p>A client website for an NGO and my own ebook store, each built end to end and live on the web.</p></div>
+<div class="fl-grid">{fl_cards}</div>
 </div>
 </section>
 
